@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "airbnb-frontend"
+    }
+  },
+  "defaultProject": "airbnb-frontend",
+  "cli": {
+    "analytics": "5a07cbe9-661f-4d67-b10d-0d593693e340"
+  }
 }
