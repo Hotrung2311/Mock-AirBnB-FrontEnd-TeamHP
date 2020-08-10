@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AccountsModule} from "./accounts/accounts.module";
+import {HomepageComponent} from "./home/homepage/homepage.component";
 
 const routes: Routes = [
-  { path: 'account', loadChildren: AccountsModule},
 ];
 
 @NgModule({
-  declarations:[],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
