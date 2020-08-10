@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AccountsModule} from "./accounts/accounts.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import {AccountsModule} from "./accounts/accounts.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     AccountsModule
   ],
   providers: [],
