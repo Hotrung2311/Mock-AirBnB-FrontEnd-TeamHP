@@ -3,9 +3,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { AccountRoutingModule } from './account-routing.module';
-import { LayoutComponent } from './layout.component';
-import { LoginComponent } from './login.component';
-import { RegisterComponent } from './register.component';
+import { AccountLoginComponent } from './account-login/account-login.component';
+import { AccountRegisterComponent } from './account-register/account-register.component';
+import {LayoutComponent} from "./layout/layout.component";
 
 @NgModule({
     imports: [
@@ -15,8 +15,8 @@ import { RegisterComponent } from './register.component';
     ],
     declarations: [
         LayoutComponent,
-        LoginComponent,
-        RegisterComponent
+        AccountLoginComponent,
+        AccountRegisterComponent
     ]
 })
 export class AccountModule { }
