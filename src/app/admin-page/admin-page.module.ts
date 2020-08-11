@@ -13,11 +13,16 @@ import { ProductAddComponent } from './product-manager/product-add/product-add.c
 import { ProductDeleteComponent } from './product-manager/product-delete/product-delete.component';
 import { ProductEditComponent } from './product-manager/product-edit/product-edit.component';
 import { ProductDetailComponent } from './product-manager/product-detail/product-detail.component';
+import { TypeManagerComponent } from './type-manager/type-manager.component';
+import { TypeListComponent } from './type-manager/type-list/type-list.component';
+import { TypeEditComponent } from './type-manager/type-edit/type-edit.component';
+import { TypeDeleteComponent } from './type-manager/type-delete/type-delete.component';
+import { TypeAddComponent } from './type-manager/type-add/type-add.component';
 
 
 
 @NgModule({
-  declarations: [AccountManagerComponent, AccountListComponent, ProductManagerComponent, ProductListComponent, ProductAddComponent, ProductDeleteComponent, ProductEditComponent, ProductDetailComponent],
+  declarations: [AccountManagerComponent, AccountListComponent, ProductManagerComponent, ProductListComponent, ProductAddComponent, ProductDeleteComponent, ProductEditComponent, ProductDetailComponent, TypeManagerComponent, TypeListComponent, TypeEditComponent, TypeDeleteComponent, TypeAddComponent],
     imports: [
         CommonModule,
         RouterModule,
