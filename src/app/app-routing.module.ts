@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomepageComponent} from "./home/homepage/homepage.component";
+import {LoginComponent} from "./accounts/login.component";
 
 const routes: Routes = [
-  { path: 'users', loadChildren: usersModule, canActivate: [AuthGuard] },
-  { path: 'account', loadChildren: accountModule },
+  {path: '', component:HomepageComponent},
+  {path: 'logins', component:LoginComponent}
 ];
 
 @NgModule({
