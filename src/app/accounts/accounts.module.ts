@@ -9,12 +9,12 @@ import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [LayoutComponent, AccountLoginComponent, AccountRegisterComponent],
-  // exports: [
-  //   CommonModule,
-  //   ReactiveFormsModule,
-  //   AccountLoginComponent,
-  //   AccountRegisterComponent
-  // ],
+  exports: [
+    CommonModule,
+    ReactiveFormsModule,
+    AccountLoginComponent,
+    AccountRegisterComponent
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
