@@ -18,18 +18,19 @@ import { TypeListComponent } from './type-manager/type-list/type-list.component'
 import { TypeEditComponent } from './type-manager/type-edit/type-edit.component';
 import { TypeDeleteComponent } from './type-manager/type-delete/type-delete.component';
 import { TypeAddComponent } from './type-manager/type-add/type-add.component';
+import {AppModule} from "../app.module";
 
 
 
 @NgModule({
   declarations: [AccountManagerComponent, AccountListComponent, ProductManagerComponent, ProductListComponent, ProductAddComponent, ProductDeleteComponent, ProductEditComponent, ProductDetailComponent, TypeManagerComponent, TypeListComponent, TypeEditComponent, TypeDeleteComponent, TypeAddComponent],
-    imports: [
-        CommonModule,
-        RouterModule,
-        NgxPaginationModule,
-        Ng2OrderModule,
-        Ng2SearchPipeModule,
-        DataTablesModule
-    ]
+  imports: [
+    CommonModule,
+    RouterModule,
+    NgxPaginationModule,
+    Ng2OrderModule,
+    Ng2SearchPipeModule,
+    DataTablesModule,
+  ]
 })
 export class AdminPageModule { }

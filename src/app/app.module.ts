@@ -7,12 +7,14 @@ import {HomeModule} from "./home/home.module";
 import {AdminPageModule} from "./admin-page/admin-page.module";
 import {HttpClientModule} from "@angular/common/http";
 import {DataTablesModule} from "angular-datatables";
+import { AdminSideMenuComponent } from './core/admin-side-menu/admin-side-menu.component';
 // import { ProductAddComponent } from './product-manager/product-add/product-add.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdminSideMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,9 @@ import {DataTablesModule} from "angular-datatables";
     DataTablesModule,
   ],
   providers: [],
+  exports: [
+    AdminSideMenuComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
