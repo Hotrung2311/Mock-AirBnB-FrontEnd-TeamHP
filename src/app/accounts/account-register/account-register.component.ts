@@ -1,58 +1,57 @@
-// import { Component, OnInit } from '@angular/core';
-// import { Router, ActivatedRoute } from '@angular/router';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { first } from 'rxjs/operators';
-//
-// @Component({
-//   selector: 'app-account-register',
-//   templateUrl: './account-register.component.html',
-//   styleUrls: ['./account-register.component.css']
-// })
-//
-// export class AccountRegisterComponent implements OnInit {
-//   form: FormGroup;
-//   loading = false;
-//   submitted = false;
-//
-//   constructor(
-//     private formBuilder: FormBuilder,
-//     private route: ActivatedRoute,
-//     private router: Router,
-//   ) { }
-//
-//   ngOnInit() {
-//     this.form = this.formBuilder.group({
-//       firstName: ['', Validators.required],
-//       lastName: ['', Validators.required],
-//       username: ['', Validators.required],
-//       password: ['', [Validators.required, Validators.minLength(6)]]
-//     });
-//   }
-//
-//   // convenience getter for easy access to form fields
-//   get f() { return this.form.controls; }
-//
-//   onSubmit() {
-//     this.submitted = true;
-//
-//     // reset alerts on submit
-//
-//     // stop here if form is invalid
-//     if (this.form.invalid) {
-//       return;
-//     }
-//
-//     this.loading = true;
-//   //   this.accountService.register(this.form.value)
-//   //     .pipe(first())
-//   //     .subscribe(
-//   //       data => {
-//   //         this.alertService.success('Registration successful', { keepAfterRouteChange: true });
-//   //         this.router.navigate(['../login'], { relativeTo: this.route });
-//   //       },
-//   //       error => {
-//   //         this.alertService.error(error);
-//   //         this.loading = false;
-//   //       });
-//   // }
-// }
+import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '@app/jwt/auth.service';
+import {TokenStorageService} from '@app/jwt/tokenStorage.service';
+import {Router} from '@angular/router';
+
+@Component({
+  selector: 'app-account-register',
+  templateUrl: './account-register.component.html',
+  styleUrls: ['./account-register.component.css']
+})
+export class AccountRegisterComponent implements OnInit {
+  form: FormGroup;
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMess = '';
+  roles: string[] = [];
+  constructor(private authService: AuthService,
+              private tokenStorage: TokenStorageService,
+              private formBuilder: FormBuilder, private router: Router) { }
+
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      username: ['', [Validators.required, Validators.minLength(4)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      idNumber: ['', [Validators.required, Validators.minLength(6)]],
+      passport: ['', [Validators.required, Validators.minLength(6)]],
+      phonenumber: ['', [Validators.required, Validators.minLength(6)]],
+      address: ['', [Validators.required, Validators.minLength(6)]],
+      age: ['', [Validators.required, Validators.minLength(6)]],
+      email: ['', [Validators.required, Validators.minLength(6)]],
+    });
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      // this.roles = this.tokenStorage.getUser();
+    }
+  }
+  onSubmit() {
+    this.authService.signup(this.form.value).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.token);
+        console.log(data.token);
+        this.tokenStorage.saveUser(data.username);
+        console.log(data);
+        this.router.navigate(['home'])
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        // this.roles = this.tokenStorage.getUser().roles;
+        console.log(this.tokenStorage);
+      },
+      err => {
+        this.errorMess =  err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
+  }
+}

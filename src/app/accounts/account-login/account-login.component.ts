@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from '@app/jwt/auth.service';
 import {TokenStorageService} from '@app/jwt/tokenStorage.service';
@@ -23,8 +23,8 @@ export class AccountLoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      username: [''],
-      password: ['']
+      username: ['', [Validators.required, Validators.minLength(4)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
@@ -38,7 +38,7 @@ export class AccountLoginComponent implements OnInit {
         console.log(data.token);
         this.tokenStorage.saveUser(data.username);
         console.log(data);
-        // this.router.navigate(['test'])
+        this.router.navigate(['home'])
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         // this.roles = this.tokenStorage.getUser().roles;
@@ -53,5 +53,13 @@ export class AccountLoginComponent implements OnInit {
 
   reloadPage() {
     window.location.reload();
+  }
+
+  get username() {
+    return this.form.get('username');
+  }
+
+  get password() {
+    return this.form.get('password');
   }
 }

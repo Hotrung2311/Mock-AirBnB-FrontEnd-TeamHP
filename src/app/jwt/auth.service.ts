@@ -16,10 +16,11 @@ export class AuthService {
       `${AUTH_API}/login`, account
     );
   }
-  show():Observable<User>{
-    return this.http.get<User>(`${AUTH_API}/show`);
+  signup(user : User): Observable<User>{
+    return this.http.post<User>(
+      `${AUTH_API}/signup`, user
+    );
   }
-
 }
 
 

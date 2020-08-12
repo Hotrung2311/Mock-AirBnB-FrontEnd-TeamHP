@@ -4,5 +4,10 @@ export interface User{
   type?: string;
   username: string;
   password?: string;
+  idNumber?: string;
+  address?: string;
+  age?: number;
+  passport?: string;
+  email?: string;
   role?: any;
 }
