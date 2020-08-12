@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomepageComponent} from "./home/homepage/homepage.component";
 
 const routes: Routes = [
-  {path:'', loadChildren: './admin-page/admin-page.module#AdminPageModule'},
-  {path:'', loadChildren: './accounts/accounts.module#AccountsModule'},
+  {path:'admin', loadChildren: './admin-page/admin-page.module#AdminPageModule'},
+  {path:'account', loadChildren: './accounts/accounts.module#AccountsModule'},
   {path:'', loadChildren: './home/home.module#HomeModule'},
 ];
 
