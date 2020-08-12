@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {environment} from "../../environments/environment";
 import {IProduct} from "../_model/iproduct";
 
 @Injectable({
@@ -8,28 +9,28 @@ import {IProduct} from "../_model/iproduct";
 })
 export class ProductsService {
 
-  API_URL = "http://localhost:8080/products";
+  url = environment.API_URL_PRODUCT;
 
-  constructor(private http: HttpClient) {
+  constructor(private httpClient: HttpClient) { }
+
+  getAll(): Observable<IProduct[]>{
+    return this.httpClient.get<IProduct[]>(this.url);
   }
 
-  getAll(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(this.API_URL);
+  getById(id: number): Observable<IProduct>{
+    return this.httpClient.get<IProduct>(this.url + '/' + id);
   }
 
-  findById(id: number): Observable<any> {
-    return this.http.get(`${this.API_URL}/${id}`);
+  delete(id: number): Observable<IProduct>{
+    return this.httpClient.delete<IProduct>(this.url + '/' + id + '/delete');
   }
 
-  deleteBook(id: number): Observable<any> {
-    return this.http.delete(`${this.API_URL}/${id}`);
+  add(product: IProduct): Observable<IProduct>{
+    return this.httpClient.post<IProduct>(this.url + '/create', product);
   }
 
-  addBook(book: any): Observable<any> {
-    return this.http.post(this.API_URL, book);
+  edit(product: IProduct): Observable<IProduct>{
+    return this.httpClient.put<IProduct>(this.url + product.id + '/update', product);
   }
 
-  editBook(id: number, book: Partial<IProduct>): Observable<IProduct> {
-    return this.http.put<IProduct>(`${this.API_URL}/${id}`, book);
-  }
 }

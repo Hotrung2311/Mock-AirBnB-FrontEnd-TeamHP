@@ -1,16 +1,15 @@
-import {IType} from "./itype";
+import {IRole} from "./irole";
 
 export interface IAccount {
-  id:number;
-  userName:string;
-  password:string;
-  email:string;
-  phone:string;
-  age:string;
-  address:string;
-  idNumber:string;
-  passport:string;
+  id: number;
+  username: string;
+  password: string;
+  email: string;
+  phone: string;
+  age: number;
+  address: string;
+  idnumber: string;
+  passport: string;
+  role: IRole[];
 
-
-  types: IAccount;
 }
