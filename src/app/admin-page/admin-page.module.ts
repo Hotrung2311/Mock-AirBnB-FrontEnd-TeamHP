@@ -19,13 +19,15 @@ import { TypeDeleteComponent } from '../accounts/type-manager/type-delete/type-d
 import {ReactiveFormsModule} from "@angular/forms";
 import { FormsModule } from '@angular/forms';
 import {HomepageComponent} from "../home/homepage/homepage.component";
+import { AccountDetailComponent } from './account-manager/account-detail/account-detail.component';
 
 const routes: Routes = [
-  {path: 'admin', component: AccountManagerComponent},
+  {path: 'list', component: AccountListComponent},
+  {path: 'list/1', component: AccountDetailComponent},
 ]
 
 @NgModule({
-  declarations: [AccountManagerComponent, AccountListComponent, ProductManagerComponent, ProductListComponent, ProductAddComponent, ProductDeleteComponent, ProductEditComponent, ProductDetailComponent, TypeManagerComponent, TypeListComponent, TypeDeleteComponent],
+  declarations: [AccountManagerComponent, AccountListComponent, ProductManagerComponent, ProductListComponent, ProductAddComponent, ProductDeleteComponent, ProductEditComponent, ProductDetailComponent, TypeManagerComponent, TypeListComponent, TypeDeleteComponent, AccountDetailComponent],
   imports: [
     CommonModule,
     RouterModule,

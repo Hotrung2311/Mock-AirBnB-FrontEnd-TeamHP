@@ -1,29 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {IRole} from "../../../_model/irole";
-import {IType} from "../../../_model/itype";
 import {IAccount} from "../../../_model/iaccount";
 
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-];
-
-
 @Component({
-  selector: 'app-account-list',
-  templateUrl: './account-list.component.html',
-  styleUrls: ['./account-list.component.css']
+  selector: 'app-account-detail',
+  templateUrl: './account-detail.component.html',
+  styleUrls: ['./account-detail.component.css']
 })
-export class AccountListComponent implements OnInit {
-
-  constructor() { }
+export class AccountDetailComponent implements OnInit {
 
   public data: IAccount[] = [
     {
@@ -82,4 +65,5 @@ export class AccountListComponent implements OnInit {
   loadData() {
     this.accountList = this.data;
   }
+
 }
