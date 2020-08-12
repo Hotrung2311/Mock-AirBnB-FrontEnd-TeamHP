@@ -71,72 +71,47 @@
               <table>
                 <tr>
                   <th style="width: 150px">ID</th>
-                  <td>{{accountList[0].id}}</td>
+                  <td>{{account.id}}</td>
                 </tr>
                 <tr>
                   <th>Name</th>
-                  <td>{{accountList[0].username}}</td>
+                  <td>{{account.username}}</td>
                 </tr>
                 <tr>
                   <th>Age</th>
-                  <td>{{accountList[0].age}}</td>
+                  <td>{{account.age}}</td>
                 </tr>
                 <tr>
                   <th >Phone</th>
-                  <td>{{accountList[0].phone}}</td>
+                  <td>{{account.phone}}</td>
                 </tr>
                 <tr>
                   <th>Email</th>
-                  <td>{{accountList[0].email}}</td>
+                  <td>{{account.email}}</td>
                 </tr>
                 <tr>
                   <th>Passport No.</th>
-                  <td>{{accountList[0].passport}}</td>
+                  <td>{{account.passport}}</td>
                 </tr>
                 <tr>
                   <th>ID No.</th>
-                  <td>{{accountList[0].idnumber}}</td>
+                  <td>{{account.idNumber}}</td>
                 </tr>
                 <tr>
                   <th>Address</th>
-                  <td>{{accountList[0].address}}</td>
+                  <td>{{account.address}}</td>
+                </tr>
+                <tr>
+                  <th>Roles</th>
+                  <td *ngFor="let role of account.roles">
+                    {{role.name}}
+                  </td>
                 </tr>
               </table>
-<!--              <table class="table table-striped table-bordered table-sm row-border hover" datatable>-->
-<!--                <thead>-->
-<!--                <tr>-->
-<!--                  <th style="width: 60px">ID</th>-->
-<!--                  <th>Name</th>-->
-<!--                  <th>Phone</th>-->
-<!--                  <th>Email</th>-->
-<!--                  <th>Age</th>-->
-<!--                  <th>Role</th>-->
-<!--                  <th style="width: 80px">Action</th>-->
-<!--                </tr>-->
-<!--                </thead>-->
-<!--                <tbody>-->
-<!--                <tr *ngFor="let account of accountList">-->
-<!--                  <td>{{account.id}}</td>-->
-<!--                  <td>{{account.username}}</td>-->
-<!--                  <td>{{account.phone}}</td>-->
-<!--                  <td>{{account.email}}</td>-->
-<!--                  <td>{{account.age}}</td>-->
-<!--                  <td>{{account.role}}</td>-->
-<!--                  <td>-->
-<!--                    <a [routerLink]="['/admin/types/edit', account.id]">-->
-<!--                      <button class="btn btn-success"><i class="fas fa-edit"></i></button>-->
-<!--                    </a>-->
-<!--                    |-->
-<!--                    <a [routerLink]="['/admin/types/delete', account.id]">-->
-<!--                      <button class="btn btn-danger"><i class="fas fa-trash"></i></button>-->
-<!--                    </a>-->
-<!--                  </td>-->
-<!--                </tr>-->
-<!--                </tbody>-->
-<!--              </table>-->
             </div>
           </div>
         </div>
+        <button class="btn btn-outline-dark" [routerLink]="['/admin']">Back</button>
       </div>
     </main>
     <footer class="py-4 bg-light mt-auto">

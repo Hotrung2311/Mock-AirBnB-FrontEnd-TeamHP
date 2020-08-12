@@ -20,14 +20,20 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { FormsModule } from '@angular/forms';
 import {HomepageComponent} from "../home/homepage/homepage.component";
 import { AccountDetailComponent } from './account-manager/account-detail/account-detail.component';
+import { AccountEditComponent } from './account-manager/account-edit/account-edit.component';
+import { AccountCreateComponent } from './account-manager/account-create/account-create.component';
+import { AccountDeleteComponent } from './account-manager/account-delete/account-delete.component';
 
 const routes: Routes = [
-  {path: 'list', component: AccountListComponent},
-  {path: 'list/1', component: AccountDetailComponent},
+  {path: '', component: AccountListComponent},
+  {path: 'create', component: AccountCreateComponent},
+  {path: ':id', component: AccountDetailComponent},
+  {path: ':id/delete', component: AccountDeleteComponent},
+  {path: ':id/edit', component: AccountEditComponent},
 ]
 
 @NgModule({
-  declarations: [AccountManagerComponent, AccountListComponent, ProductManagerComponent, ProductListComponent, ProductAddComponent, ProductDeleteComponent, ProductEditComponent, ProductDetailComponent, TypeManagerComponent, TypeListComponent, TypeDeleteComponent, AccountDetailComponent],
+  declarations: [AccountManagerComponent, AccountListComponent, ProductManagerComponent, ProductListComponent, ProductAddComponent, ProductDeleteComponent, ProductEditComponent, ProductDetailComponent, TypeManagerComponent, TypeListComponent, TypeDeleteComponent, AccountDetailComponent, AccountEditComponent, AccountCreateComponent, AccountDeleteComponent],
   imports: [
     CommonModule,
     RouterModule,
