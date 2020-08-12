@@ -1,63 +1,57 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
-
-import { AccountService, AlertService } from '@app/_services';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
+import {AuthService} from '@app/jwt/auth.service';
+import {TokenStorageService} from '@app/jwt/tokenStorage.service';
 
 @Component({
-  selector: 'app-account-login',
+  selector: 'app-login',
   templateUrl: './account-login.component.html',
   styleUrls: ['./account-login.component.css']
 })
 export class AccountLoginComponent implements OnInit {
   form: FormGroup;
-  loading = false;
-  submitted = false;
-  returnUrl: string;
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMess = '';
+  roles: string[] = [];
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
-    private router: Router,
-    private accountService: AccountService,
-    private alertService: AlertService
+  constructor(private authService: AuthService,
+              private tokenStorage: TokenStorageService,
+              private formBuilder: FormBuilder, private router: Router
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.form = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: [''],
+      password: ['']
     });
-
-    // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      // this.roles = this.tokenStorage.getUser();
+    }
+  }
+  onSubmit() {
+    this.authService.login(this.form.value).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.token);
+        console.log(data.token);
+        this.tokenStorage.saveUser(data.username);
+        console.log(data);
+        // this.router.navigate(['test'])
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        // this.roles = this.tokenStorage.getUser().roles;
+        console.log(this.tokenStorage);
+      },
+      err => {
+        this.errorMess =  err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
   }
 
-  // convenience getter for easy access to form fields
-  get f() { return this.form.controls; }
-
-  onSubmit() {
-    this.submitted = true;
-
-    // reset alerts on submit
-    this.alertService.clear();
-
-    // stop here if form is invalid
-    if (this.form.invalid) {
-      return;
-    }
-
-    this.loading = true;
-    this.accountService.login(this.f.username.value, this.f.password.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.alertService.error(error);
-          this.loading = false;
-        });
+  reloadPage() {
+    window.location.reload();
   }
 }
