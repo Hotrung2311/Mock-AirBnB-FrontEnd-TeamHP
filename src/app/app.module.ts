@@ -1,38 +1,34 @@
-﻿import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
-// used to create fake backend
-import { fakeBackendProvider } from './_helpers';
+﻿import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AppComponent } from './app.component';
-import { AlertComponent } from './_components';
-import { HomeComponent } from './home';
-import {AccountModule} from "@app/accounts/account.module";
+import {HomeModule} from "./home/home.module";
+import {AdminPageModule} from "./admin-page/admin-page.module";
+import {HttpClientModule} from "@angular/common/http";
+import {DataTablesModule} from "angular-datatables";
+import {FormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from "@angular/forms";
+import {AccountsModule} from "./accounts/accounts.module";
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        AppRoutingModule,
-      AccountModule
-    ],
-    declarations: [
-        AppComponent,
-        AlertComponent,
-        HomeComponent,
-    ],
-    providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
-        // provider used to create fake backend
-        fakeBackendProvider
-    ],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    HomeModule,
+    AdminPageModule,
+    DataTablesModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AccountsModule
+  ],
+  providers: [],
+  exports: [
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppModule { };
+export class AppModule { }
