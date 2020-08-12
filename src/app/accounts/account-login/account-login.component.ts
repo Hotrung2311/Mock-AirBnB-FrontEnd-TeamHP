@@ -1,54 +1,65 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
-import {AccountService} from "@app/_services/account.service";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {AuthService} from '@app/jwt/auth.service';
+import {TokenStorageService} from '@app/jwt/tokenStorage.service';
 
 @Component({
-  selector: 'app-account-login',
+  selector: 'app-login',
   templateUrl: './account-login.component.html',
   styleUrls: ['./account-login.component.css']
 })
 export class AccountLoginComponent implements OnInit {
   form: FormGroup;
-  loading = false;
-  submitted = false;
-  returnUrl: string;
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMess = '';
+  roles: string[] = [];
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
-    private router: Router,
-    private accountService: AccountService,
+  constructor(private authService: AuthService,
+              private tokenStorage: TokenStorageService,
+              private formBuilder: FormBuilder, private router: Router
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.form = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: ['', [Validators.required, Validators.minLength(4)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
-
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      // this.roles = this.tokenStorage.getUser();
+    }
+  }
+  onSubmit() {
+    this.authService.login(this.form.value).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.token);
+        console.log(data.token);
+        this.tokenStorage.saveUser(data.username);
+        console.log(data);
+        this.router.navigate(['home'])
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        // this.roles = this.tokenStorage.getUser().roles;
+        console.log(this.tokenStorage);
+      },
+      err => {
+        this.errorMess =  err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
   }
 
-  get f() { return this.form.controls; }
+  reloadPage() {
+    window.location.reload();
+  }
 
-  onSubmit() {
-    this.submitted = true;
+  get username() {
+    return this.form.get('username');
+  }
 
-    if (this.form.invalid) {
-      return;
-    }
-
-    this.loading = true;
-    this.accountService.login(this.f.username.value, this.f.password.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.loading = false;
-        });
+  get password() {
+    return this.form.get('password');
   }
 }
