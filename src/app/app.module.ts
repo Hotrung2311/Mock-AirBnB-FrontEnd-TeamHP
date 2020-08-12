@@ -7,14 +7,13 @@ import {HomeModule} from "./home/home.module";
 import {AdminPageModule} from "./admin-page/admin-page.module";
 import {HttpClientModule} from "@angular/common/http";
 import {DataTablesModule} from "angular-datatables";
-import { AdminSideMenuComponent } from './core/admin-side-menu/admin-side-menu.component';
-// import { ProductAddComponent } from './product-manager/product-add/product-add.component';
-
+import {FormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from "@angular/forms";
+import {AccountsModule} from "./accounts/accounts.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminSideMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,10 +22,12 @@ import { AdminSideMenuComponent } from './core/admin-side-menu/admin-side-menu.c
     HomeModule,
     AdminPageModule,
     DataTablesModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AccountsModule
   ],
   providers: [],
   exports: [
-    AdminSideMenuComponent
   ],
   bootstrap: [AppComponent]
 })

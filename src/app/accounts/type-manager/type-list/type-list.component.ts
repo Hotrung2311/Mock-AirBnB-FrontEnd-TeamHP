@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductsService} from "../../../_services/products.service";
 import {IType} from "../../../_model/itype";
 import {TypeService} from "../../../_services/type.service";
 
