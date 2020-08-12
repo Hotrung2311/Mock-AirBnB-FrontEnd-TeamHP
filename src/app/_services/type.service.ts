@@ -1,35 +1,46 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {IType} from "../_model/itype";
+import {IType} from '../_model/itype';
+import {environment} from "../../environments/environment";
+import {IAccount} from "../_model/iaccount";
+import {IImage} from "../_model/iimage";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TypeService {
 
-  API_URL = "http://localhost:8080/types";
+  url = environment.API_URL_TYPE;
 
-  constructor(private http: HttpClient) {
+  constructor(private httpClient: HttpClient) { }
+
+  getAll(): Observable<IType[]>{
+    return this.httpClient.get<IType[]>(this.url);
   }
 
-  getAll(): Observable<IType[]> {
-    return this.http.get<IType[]>(this.API_URL);
+  getById(id: number): Observable<IType>{
+    return this.httpClient.get<IType>(this.url + '/' + id);
   }
 
-  findById(id: number): Observable<any> {
-    return this.http.get(`${this.API_URL}/${id}`);
+  delete(id: number): Observable<IType>{
+    return this.httpClient.delete<IType>(this.url + '/' + id + '/delete');
   }
 
-  delete(id: number): Observable<any> {
-    return this.http.delete(`${this.API_URL}/${id}`);
+  add(iType: IType): Observable<IType>{
+    return this.httpClient.post<IType>(this.url + '/create', iType);
   }
 
-  addNew(book: any): Observable<any> {
-    return this.http.post(this.API_URL, book);
+  edit(iType: IType): Observable<IType>{
+    return this.httpClient.put<IType>(this.url + iType.id + '/update', iType);
   }
 
-  edit(id: number, book: Partial<IType>): Observable<IType> {
-    return this.http.put<IType>(`${this.API_URL}/${id}`, book);
-  }
 }
+
+
+
+
+
+
+
+

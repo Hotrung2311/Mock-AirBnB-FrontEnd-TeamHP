@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
 import {HomepageComponent} from "../home/homepage/homepage.component";
 
 const routes: Routes = [
-  {path: 'admin', component: AccountManagerComponent},
+  {path: 'list', component: AccountListComponent},
 ]
 
 @NgModule({
