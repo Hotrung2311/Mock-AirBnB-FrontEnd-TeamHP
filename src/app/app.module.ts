@@ -18,28 +18,28 @@ import {ProductDeleteComponent} from "@app/accounts/product-delete/product-delet
 
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        AppRoutingModule,
-        RouterModule,
-        FormsModule
-    ],
-    declarations: [
-        AppComponent,
-      AccountLoginComponent,
-      AccountRegisterComponent,
-      AccountProfileComponent,
-      ProductCreateComponent,
-      ProductListComponent,
-      ProductEditComponent,
-      ProductDeleteComponent,
-      HomepageComponent
-    ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    RouterModule,
+    FormsModule
+  ],
+  declarations: [
+    AppComponent,
+    AccountLoginComponent,
+    AccountRegisterComponent,
+    AccountProfileComponent,
+    ProductCreateComponent,
+    ProductListComponent,
+    ProductEditComponent,
+    ProductDeleteComponent,
+    HomepageComponent
+  ],
   providers: [authInterceptorProviders,
     {provide: APP_BASE_HREF, useValue: '/'}
   ],
-    bootstrap: [AppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
