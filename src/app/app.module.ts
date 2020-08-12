@@ -10,12 +10,6 @@ import {RouterModule} from '@angular/router';
 import {AccountLoginComponent} from '@app/accounts/account-login/account-login.component';
 import {HomepageComponent} from '@app/home/homepage/homepage.component';
 import {AccountRegisterComponent} from '@app/accounts/account-register/account-register.component';
-import {AccountProfileComponent} from "@app/accounts/account-profile/account-profile.component";
-import {ProductCreateComponent} from "@app/accounts/product-create/product-create.component";
-import {ProductListComponent} from "@app/accounts/product-list/product-list.component";
-import {ProductEditComponent} from "@app/accounts/product-edit/product-edit.component";
-import {ProductDeleteComponent} from "@app/accounts/product-delete/product-delete.component";
-
 
 @NgModule({
     imports: [
@@ -30,11 +24,6 @@ import {ProductDeleteComponent} from "@app/accounts/product-delete/product-delet
         AppComponent,
       AccountLoginComponent,
       AccountRegisterComponent,
-      AccountProfileComponent,
-      ProductCreateComponent,
-      ProductListComponent,
-      ProductEditComponent,
-      ProductDeleteComponent,
       HomepageComponent
     ],
   providers: [authInterceptorProviders,
