@@ -11,7 +11,7 @@ import {ProductCreateComponent} from "@app/host/product-create/product-create.co
 import {ProductEditComponent} from "@app/host/product-edit/product-edit.component";
 import {ProductDeleteComponent} from "@app/host/product-delete/product-delete.component";
 import {ProductDetailComponent} from "@app/host/product-detail/product-detail.component";
-import {AccountsModule} from "@app/accounts/accounts.module";
+
 
 @NgModule({
   imports: [
@@ -20,8 +20,7 @@ import {AccountsModule} from "@app/accounts/accounts.module";
     HttpClientModule,
     AppRoutingModule,
     RouterModule,
-    FormsModule,
-    AccountsModule
+    FormsModule
   ],
   declarations: [
     AppComponent,

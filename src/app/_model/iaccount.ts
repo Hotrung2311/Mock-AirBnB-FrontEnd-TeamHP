@@ -1,7 +1,7 @@
 import {IRole} from "./irole";
 
 export interface IAccount {
-  id?: number;
+  id: number;
   username: string;
   password: string;
   email: string;
@@ -10,5 +10,6 @@ export interface IAccount {
   address: string;
   idNumber: string;
   passport: string;
-  roles?: IRole[];
+  role: IRole[];
+
 }
