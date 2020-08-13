@@ -5,9 +5,8 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {ProductDeleteComponent} from './product-delete/product-delete.component';
 import {ProductEditComponent} from './product-edit/product-edit.component';
 
-
 @NgModule({
-  declarations: [ProductCreateComponent, ProductDetailComponent, ProductDeleteComponent, ProductEditComponent],
+  declarations: [ProductCreateComponent, ProductDetailComponent, ProductDeleteComponent, ProductEditComponent, TestComponent],
   imports: [
     CommonModule
   ]
