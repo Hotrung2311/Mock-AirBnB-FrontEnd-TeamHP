@@ -2,7 +2,7 @@
 // import {environment} from "../../environments/environment";
 // import {HttpClient} from "@angular/common/http";
 // import {Observable} from "rxjs";
-// import {IAccount} from "../_model/iaccount";
+// import {Account} from "../_model/iaccount";
 //
 // @Injectable({
 //   providedIn: 'root'
@@ -13,24 +13,24 @@
 //
 //   constructor(private httpClient: HttpClient) { }
 //
-//   getAll(): Observable<IAccount[]>{
-//     return this.httpClient.get<IAccount[]>(this.url);
+//   getAll(): Observable<Account[]>{
+//     return this.httpClient.get<Account[]>(this.url);
 //   }
 //
-//   getById(id: number): Observable<IAccount>{
-//     return this.httpClient.get<IAccount>(this.url + '/' + id);
+//   getById(id: number): Observable<Account>{
+//     return this.httpClient.get<Account>(this.url + '/' + id);
 //   }
 //
-//   delete(id: number): Observable<IAccount>{
-//     return this.httpClient.delete<IAccount>(this.url + '/' + id + '/delete');
+//   delete(id: number): Observable<Account>{
+//     return this.httpClient.delete<Account>(this.url + '/' + id + '/delete');
 //   }
 //
-//   add(account: IAccount): Observable<IAccount>{
-//     return this.httpClient.post<IAccount>(this.url + '/create', account);
+//   add(account: Account): Observable<Account>{
+//     return this.httpClient.post<Account>(this.url + '/create', account);
 //   }
 //
-//   edit(account: IAccount): Observable<IAccount>{
-//     return this.httpClient.put<IAccount>(this.url + account.id + '/update', account);
+//   edit(account: Account): Observable<Account>{
+//     return this.httpClient.put<Account>(this.url + account.id + '/update', account);
 //   }
 //
 // }
