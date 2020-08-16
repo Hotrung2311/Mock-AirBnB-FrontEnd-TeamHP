@@ -302,7 +302,7 @@
                   <div class="property_room_title">Bedrooms</div>
                   <div class="property_room_content d-flex flex-row align-items-center justify-content-start">
                     <div class="room_icon"><img src="assets/trung-new/images/room_1.png" alt=""></div>
-                    <div class="room_num">4</div>
+                    <div class="room_num">{{product.details.room}}</div>
                   </div>
                 </div>
 
@@ -311,7 +311,7 @@
                   <div class="property_room_title">Bathrooms</div>
                   <div class="property_room_content d-flex flex-row align-items-center justify-content-start">
                     <div class="room_icon"><img src="assets/trung-new/images/room_2.png" alt=""></div>
-                    <div class="room_num">3</div>
+                    <div class="room_num">{{product.details.bathRoom}}</div>
                   </div>
                 </div>
 
@@ -350,7 +350,7 @@
             <div class="property_description">
               <div class="property_title">Description</div>
               <div class="property_text property_text_2">
-                <p>Donec ullamcorper nulla non metus auctor fringi lla. Curabitur blandit tempus porttitor.Sed lectus urna, ultricies sit amet risus eget, euismod imperdiet augue. Duis imperdiet, purus a pellentesque sodales, sapien mauris rhoncus eros, ac blandit elit leo ac diam. Sed lectus urna, ultricies sit amet risus eget, euismod imperdiet augue. Duis imperdiet, purus a pellentesque sodales, sapien mauris rhoncus eros, ac blandit elit leo ac diam</p>
+                <p>{{product.details.types.name}}</p>
               </div>
             </div>
 
