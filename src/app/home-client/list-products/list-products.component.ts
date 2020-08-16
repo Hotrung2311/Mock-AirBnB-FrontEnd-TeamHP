@@ -8,7 +8,6 @@ import {Product} from "@app/_model/product";
   styleUrls: ['./list-products.component.css']
 })
 export class ListProductsComponent implements OnInit {
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
   constructor(
     private productsService: ProductsService

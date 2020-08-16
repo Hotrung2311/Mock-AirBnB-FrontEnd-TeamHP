@@ -147,7 +147,7 @@
         <div class="col">
           <div class="intro_content d-flex flex-lg-row flex-column align-items-start justify-content-start">
             <div class="intro_title_container">
-              <div class="intro_title">Town house with sea view</div>
+              <div class="intro_title">{{product.name}}</div>
               <div class="intro_tags">
                 <ul>
                   <li><a href="#">Hottub</a></li>
@@ -160,7 +160,10 @@
             </div>
             <div class="intro_price_container ml-lg-auto d-flex flex-column align-items-start justify-content-center">
               <div>For Sale</div>
-              <div class="intro_price">$980,000</div>
+              <div class="intro_price">
+                <span>$</span>
+                <span>{{product.price}}</span>
+              </div>
             </div>
           </div>
         </div>
