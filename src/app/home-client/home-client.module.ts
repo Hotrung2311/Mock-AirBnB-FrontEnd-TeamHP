@@ -7,10 +7,12 @@ import {DataTablesModule} from 'angular-datatables';
 
 import {Routes, RouterModule} from "@angular/router";
 import {NgbCarouselModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 const routes: Routes = [
-  {path: '', component: ListProductsComponent},
+  {path: '', component: HomePageComponent},
+  {path: 'all', component: ListProductsComponent},
   {path: 'detail', component: DetailProductComponent},
   {path: 'search', component: SearchProductComponent},
   {path: ':id', component: DetailProductComponent},
@@ -18,7 +20,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [ListProductsComponent, DetailProductComponent, SearchProductComponent],
+  declarations: [ListProductsComponent, DetailProductComponent, SearchProductComponent, HomePageComponent],
   exports:[
     DetailProductComponent,
   ],
