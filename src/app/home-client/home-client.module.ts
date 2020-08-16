@@ -8,6 +8,7 @@ import {DataTablesModule} from 'angular-datatables';
 import {Routes, RouterModule} from "@angular/router";
 import {NgbCarouselModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { HomePageComponent } from './home-page/home-page.component';
+import { HistoryOrderComponent } from './history-order/history-order.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [ListProductsComponent, DetailProductComponent, SearchProductComponent, HomePageComponent],
+  declarations: [ListProductsComponent, DetailProductComponent, SearchProductComponent, HomePageComponent, HistoryOrderComponent],
   exports:[
     DetailProductComponent,
   ],
