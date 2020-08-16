@@ -15,7 +15,7 @@ export class ListProductsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.loadData()
+    this.loadData()
 
   }
 

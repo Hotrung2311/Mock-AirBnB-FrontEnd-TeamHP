@@ -12,7 +12,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
-  {path: 'all', component: ListProductsComponent},
+  {path: 'list', component: ListProductsComponent},
   {path: 'detail', component: DetailProductComponent},
   {path: 'search', component: SearchProductComponent},
   {path: ':id', component: DetailProductComponent},

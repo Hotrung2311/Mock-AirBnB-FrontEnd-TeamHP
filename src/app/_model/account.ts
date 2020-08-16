@@ -11,5 +11,4 @@ export interface Account {
   idNumber: string;
   passport: string;
   role: Role[];
-
 }

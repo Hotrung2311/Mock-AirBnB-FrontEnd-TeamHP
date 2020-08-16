@@ -7,4 +7,5 @@ export interface Product {
   price: number;
   status: boolean;
   details:Detail;
+  accounts: Account;
 }
