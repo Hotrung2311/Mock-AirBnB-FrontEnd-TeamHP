@@ -1,31 +1,47 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <title>Property</title>-->
+<!--  <meta charset="utf-8">-->
+<!--  <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--  <meta name="description" content="Bluesky template project">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--  <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">-->
+<!--  <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+<!--  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">-->
+<!--  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">-->
+<!--  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">-->
+<!--  <link rel="stylesheet" type="text/css" href="plugins/rangeslider.js-2.3.0/rangeslider.css">-->
+<!--  <link rel="stylesheet" type="text/css" href="styles/property.css">-->
+<!--  <link rel="stylesheet" type="text/css" href="styles/property_responsive.css">-->
+<!--</head>-->
+<!--<body>-->
+
 <div class="super_container">
 
   <!-- Header -->
+
   <header class="header">
     <div class="container">
       <div class="row">
         <div class="col">
           <div class="header_content d-flex flex-row align-items-center justify-content-start">
             <div class="logo">
-              <a href="#">
-                <div>Major</div>
-                <div>5 * Hotel</div>
-              </a>
+              <a href="#"><img src="assets/trung-new/images/logo.png" alt=""></a>
             </div>
             <nav class="main_nav">
-              <ul class="d-flex flex-row align-items-center justify-content-start">
+              <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About us</a></li>
-                <li class="active"><a href="rooms.html">Rooms</a></li>
-                <li><a href="blog.html">News</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="news.html">News</a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </nav>
-            <div class="header_extra d-flex flex-row align-items-center justify-content-start ml-auto">
-              <div class="phone d-flex flex-row align-items-center justify-content-start"><i class="fa fa-phone"
-                                                                                             aria-hidden="true"></i><span>652-345 3222 11</span>
+            <div class="phone_num ml-auto">
+              <div class="phone_num_inner">
+                <img src="assets/trung-new/images/phone.png" alt=""><span>652-345 3222 11</span>
               </div>
-              <div class="book_button trans_200"><a href="#">Book Now</a></div>
             </div>
             <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
           </div>
@@ -36,31 +52,44 @@
 
   <!-- Menu -->
 
-  <div class="menu">
-    <div class="background_image" style="background-image:url(assets/homepage/images/menu.jpg)"></div>
-    <div class="menu_content d-flex flex-column align-items-center justify-content-center">
-      <ul class="menu_nav_list text-center">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About us</a></li>
-        <li><a href="rooms.html">Rooms</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="contact.html">Contact</a></li>
+  <div class="menu trans_500">
+    <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+      <div class="menu_close_container"><div class="menu_close"></div></div>
+      <div class="logo menu_logo">
+        <a href="#">
+          <div class="logo_container d-flex flex-row align-items-start justify-content-start">
+            <div class="logo_image"><div><img src="assets/trung-new/images/logo.png" alt=""></div></div>
+          </div>
+        </a>
+      </div>
+      <ul>
+        <li class="menu_item"><a href="index.html">Home</a></li>
+        <li class="menu_item"><a href="about.html">About us</a></li>
+        <li class="menu_item"><a href="#">Speakers</a></li>
+        <li class="menu_item"><a href="#">Tickets</a></li>
+        <li class="menu_item"><a href="news.html">News</a></li>
+        <li class="menu_item"><a href="contact.html">Contact</a></li>
       </ul>
-      <div class="menu_review"><a href="#">Book Now</a></div>
     </div>
+    <div class="menu_phone"><span>call us: </span>652 345 3222 11</div>
   </div>
 
   <!-- Home -->
 
   <div class="home">
-    <div class="parallax_background parallax-window" data-parallax="scroll"
-         data-image-src="assets/homepage/images/rooms.jpg" data-speed="0.8"></div>
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="assets/trung-new/images/properties.jpg" data-speed="0.8"></div>
     <div class="home_container">
       <div class="container">
         <div class="row">
           <div class="col">
-            <div class="home_content text-center">
-              <div class="home_title"><h1>Our Rooms</h1></div>
+            <div class="home_content d-flex flex-row align-items-end justify-content-start">
+              <div class="home_title">Search results</div>
+              <div class="breadcrumbs ml-auto">
+                <ul>
+                  <li><a href="index.htmo">Home</a></li>
+                  <li>Search Results</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -68,75 +97,59 @@
     </div>
   </div>
 
-  <!-- Search Box -->
-
-  <div class="search_box">
+  <!-- Home Search -->
+  <div class="home_search">
     <div class="container">
       <div class="row">
         <div class="col">
-          <div class="search_box_container d-flex flex-row align-items-center justify-content-start">
-            <div class="search_form_container">
-              <form action="#" id="search_form" class="search_form">
-                <div class="d-flex flex-lg-row flex-column align-items-center justify-content-start">
-                  <ul class="search_form_list d-flex flex-row align-items-center justify-content-start flex-wrap">
-                    <li class="search_dropdown d-flex flex-row align-items-center justify-content-start">
-                      <span>Check in</span>
-                      <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
-                      <ul>
-                        <li>Check in item 1</li>
-                        <li>Check in item 2</li>
-                        <li>Check in item 3</li>
-                        <li>Check in item 4</li>
-                        <li>Check in item 5</li>
-                      </ul>
-                    </li>
-                    <li class="search_dropdown d-flex flex-row align-items-center justify-content-start">
-                      <span>Check out</span>
-                      <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
-                      <ul>
-                        <li>Check out item 1</li>
-                        <li>Check out item 2</li>
-                        <li>Check out item 3</li>
-                        <li>Check out item 4</li>
-                        <li>Check out item 5</li>
-                      </ul>
-                    </li>
-                    <li class="search_dropdown d-flex flex-row align-items-center justify-content-start">
-                      <span>Guests</span>
-                      <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
-                      <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                      </ul>
-                    </li>
-                    <li class="search_dropdown d-flex flex-row align-items-center justify-content-start">
-                      <span>Children</span>
-                      <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
-                      <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                      </ul>
-                    </li>
-                    <li class="search_dropdown d-flex flex-row align-items-center justify-content-start">
-                      <span>Rooms</span>
-                      <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
-                      <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <button class="search_button" [routerLink]="['/list']">search</button>
+          <div class="home_search_container">
+            <div class="home_search_content">
+              <form action="#" class="search_form d-flex flex-row align-items-start justfy-content-start">
+                <div class="search_form_content d-flex flex-row align-items-start justfy-content-start flex-wrap">
+                  <div>
+                    <select class="search_form_select">
+                      <option disabled selected>For rent</option>
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div>
+                    <select class="search_form_select">
+                      <option disabled selected>All types</option>
+                      <option>Type 1</option>
+                      <option>Type 2</option>
+                      <option>Type 3</option>
+                      <option>Type 4</option>
+                    </select>
+                  </div>
+                  <div>
+                    <select class="search_form_select">
+                      <option disabled selected>City</option>
+                      <option>New York</option>
+                      <option>Paris</option>
+                      <option>Amsterdam</option>
+                      <option>Rome</option>
+                    </select>
+                  </div>
+                  <div>
+                    <select class="search_form_select">
+                      <option disabled selected>Bedrooms</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div>
+                  <div>
+                    <select class="search_form_select">
+                      <option disabled selected>Bathrooms</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </div>
                 </div>
+                <button class="search_form_button ml-auto">search</button>
               </form>
             </div>
           </div>
@@ -145,258 +158,373 @@
     </div>
   </div>
 
-  <!-- Rooms -->
+  <!-- Intro -->
 
-  <div class="rooms" style="padding-top: 50px">
-    <div class="container" style="width: 100%;">
-      <div class="container">
-        <div class="card">
-          <div class="container-fliud">
-            <div class="wrapper row">
-              <div class="preview col-md-6">
-
-                <div class="preview-pic tab-content">
-                  <div class="tab-pane active" id="pic-1"></div>
-                  <!--                  <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>-->
-                  <div class="tab-pane" id="pic-2">
-                    <img src="../../assets/static/img/73414971_167412377785817_4285522617293057899_n.jpg" height="300" width="300"/>
-                    <!--                    <img src="http://placekitten.com/400/252"/>-->
-                  </div>
-                </div>
-                <ul class="preview-thumbnail nav nav-tabs">
-                  <!--                  <li class="active"><a data-target="#pic-1" data-toggle="tab">-->
-                  <!--                    <img src="http://placekitten.com/200/126"/></a></li>-->
-
-                  <li>
-                    <a data-target="#pic-2" data-toggle="tab">
-                      <!--                      <img src="../../assets/static/img/73393210_156044698962672_1379384070337644640_n.jpg" height="55px" width="100px"/>-->
-                      <img src="../../assets/static/img/73393210_156044698962672_1379384070337644640_n.jpg"/>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-target="#pic-2" data-toggle="tab">
-                      <!--                      <img src="../../assets/static/img/73393210_156044698962672_1379384070337644640_n.jpg" height="55px" width="100px"/>-->
-                      <img src="../../assets/static/img/73393210_156044698962672_1379384070337644640_n.jpg"/>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-target="#pic-2" data-toggle="tab">
-                      <!--                      <img src="../../assets/static/img/73393210_156044698962672_1379384070337644640_n.jpg" height="55px" width="100px"/>-->
-                      <img src="../../assets/static/img/73393210_156044698962672_1379384070337644640_n.jpg"/>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-target="#pic-2" data-toggle="tab">
-                      <!--                      <img src="../../assets/static/img/73393210_156044698962672_1379384070337644640_n.jpg" height="55px" width="100px"/>-->
-                      <img src="../../assets/static/img/73393210_156044698962672_1379384070337644640_n.jpg"/>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-target="#pic-2" data-toggle="tab">
-                      <!--                      <img src="../../assets/static/img/73393210_156044698962672_1379384070337644640_n.jpg" height="55px" width="100px"/>-->
-                      <img src="../../assets/static/img/73393210_156044698962672_1379384070337644640_n.jpg"/>
-                    </a>
-                  </li>
+  <div class="intro">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="intro_content d-flex flex-lg-row flex-column align-items-start justify-content-start">
+            <div class="intro_title_container">
+              <div class="intro_title">Town house with sea view</div>
+              <div class="intro_tags">
+                <ul>
+                  <li><a href="#">Hottub</a></li>
+                  <li><a href="#">Swimming Pool</a></li>
+                  <li><a href="#">Garden</a></li>
+                  <li><a href="#">Patio</a></li>
+                  <li><a href="#">Hard Wood Floor</a></li>
                 </ul>
-
               </div>
-              <div class="details col-md-6">
-                <h3 class="product-title">men's shoes fashion</h3>
-                <div class="rating">
-                  <div class="stars">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                  </div>
-                  <span class="review-no">41 reviews</span>
-                </div>
-                <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem
-                  sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
-                <h4 class="price">current price: <span>$180</span></h4>
-                <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-                <div class="action">
-                  <button class="add-to-cart btn btn-default" type="button" style="background-color: #637496">Book now</button>
-                  <button class="like btn btn-default" style="margin-left: 5px; background-color: #637496" type="button"><span class="fa fa-heart"></span></button>
-                </div>
+            </div>
+            <div class="intro_price_container ml-lg-auto d-flex flex-column align-items-start justify-content-center">
+              <div>For Sale</div>
+              <div class="intro_price">$980,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="intro_slider_container">
+
+      <!-- Intro Slider -->
+<!--      <div class="owl-carousel owl-theme intro_slider">-->
+        <!-- Slide -->
+        <div class="owl-item"><img src="assets/trung-new/images/intro_1.jpg" alt=""></div>
+<!--        &lt;!&ndash; Slide &ndash;&gt;-->
+<!--        <div class="owl-item"><img src="assets/trung-new/images/intro_1.jpg" alt=""></div>-->
+<!--        &lt;!&ndash; Slide &ndash;&gt;-->
+<!--        <div class="owl-item"><img src="assets/trung-new/images/intro_1.jpg" alt=""></div>-->
+<!--      </div>-->
+
+      <!-- Intro Slider Nav -->
+      <div class="intro_slider_nav_container">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="intro_slider_nav_content d-flex flex-row align-items-start justify-content-end">
+                <div class="intro_slider_nav intro_slider_prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+                <div class="intro_slider_nav intro_slider_next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="container" style="margin-top: 20px">
-        <div class="row" style="width: 100%">
-          <div class="col-md-12">
-            <div class="panel panel-default widget">
-              <h3>Review</h3>
-              <div class="status-upload">
-                <form style="width: 100%">
-                  <textarea placeholder="What are you doing right now?"></textarea>
-                  <ul>
-                    <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i
-                      class="fa fa-music"></i></a></li>
-                    <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i
-                      class="fa fa-video-camera"></i></a></li>
-                    <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i
-                      class="fa fa-microphone"></i></a></li>
-                    <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i
-                      class="fa fa-picture-o"></i></a></li>
-                  </ul>
-                  <button type="submit" class="btn btn-success green" style="background-color: #637496; font-size: 14px; font-family: 'Roboto', sans-serif">
-                    <i class="fa fa-share"></i>
-                    Share
-                  </button>
-                </form>
-              </div><!-- Status Upload  -->
-            </div><!-- Widget Area -->
-          </div>
-          <div class="col-md-12">
-          <div class="panel panel-default widget">
-            <div class="panel-heading">
-              <span class="glyphicon glyphicon-comment"></span>
-              <h3 class="panel-title">
-                Recent Reviews</h3>
-              <span class="label label-info">
-                    78</span>
-            </div>
-            <div class="panel-body">
-              <ul class="list-group">
-                <li class="list-group-item">
-                  <div class="row">
-                    <div class="col-xs-2 col-md-1">
-                      <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
-                    <div class="col-xs-10 col-md-11">
-                      <div>
-                        <a href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">
-                          Google Style Login Page Design Using Bootstrap</a>
-                        <div class="mic-info">
-                          By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013
-                        </div>
-                      </div>
-                      <div class="comment-text">
-                        Awesome design
-                      </div>
-                      <div class="action">
-                        <button type="button" class="btn btn-primary btn-xs" title="Edit">
-                          <span><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                        </button>
-                        <button type="button" class="btn btn-success btn-xs" title="Approved" style="margin-left: 5px">
-                          <span><i class="fa fa-check"></i></span>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-xs" title="Delete" style="margin-left: 5px">
-                          <span><i class="fa fa-trash" aria-hidden="true"></i></span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="row">
-                    <div class="col-xs-2 col-md-1">
-                      <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
-                    <div class="col-xs-10 col-md-11">
-                      <div>
-                        <a href="http://bootsnipp.com/BhaumikPatel/snippets/Obgj">Admin Panel Quick Shortcuts</a>
-                        <div class="mic-info">
-                          By: <a href="#">Bhaumik Patel</a> on 11 Nov 2013
-                        </div>
-                      </div>
-                      <div class="comment-text">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                        euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
-                      </div>
-                      <div class="action">
-                        <button type="button" class="btn btn-primary btn-xs" title="Edit">
-                          <span><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                        </button>
-                        <button type="button" class="btn btn-success btn-xs" title="Approved" style="margin-left: 5px">
-                          <span><i class="fa fa-check"></i></span>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-xs" title="Delete" style="margin-left: 5px">
-                          <span><i class="fa fa-trash" aria-hidden="true"></i></span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="row">
-                    <div class="col-xs-2 col-md-1">
-                      <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
-                    <div class="col-xs-10 col-md-11">
-                      <div>
-                        <a href="http://bootsnipp.com/BhaumikPatel/snippets/4ldn">Cool Sign Up</a>
-                        <div class="mic-info">
-                          By: <a href="#">Bhaumik Patel</a> on 11 Nov 2013
-                        </div>
-                      </div>
-                      <div class="comment-text">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                        euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
-                      </div>
-                      <div class="action">
-                        <button type="button" class="btn btn-primary btn-xs" title="Edit">
-                          <span><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                        </button>
-                        <button type="button" class="btn btn-success btn-xs" title="Approved" style="margin-left: 5px">
-                          <span><i class="fa fa-check"></i></span>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-xs" title="Delete" style="margin-left: 5px">
-                          <span><i class="fa fa-trash" aria-hidden="true"></i></span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <a href="#" class="btn btn-primary btn-sm btn-block" style="background-color: #637496;"role="button"><span class="glyphicon glyphicon-refresh"></span> More</a>
-            </div>
-          </div>
-          </div>
-          <!--Reviews-->
-          <div class="col-md-12">
-            <div class="row">
-
-            </div>
-          </div>
-          <!--Reviews-->
-
-        </div>
-<!--      </div>-->
-
-
-
     </div>
   </div>
 
+  <!-- Property -->
 
-  <footer class="footer">
+  <div class="property">
+    <div class="container">
+      <div class="row">
+
+        <!-- Sidebar -->
+
+        <div class="col-lg-4">
+          <div class="sidebar">
+            <div class="sidebar_search">
+              <div class="sidebar_search_title">Search your home</div>
+              <div class="sidebar_search_form_container">
+                <form action="#" class="sidebar_search_form" id="sidebar_search_form">
+                  <select class="sidebar_search_select">
+                    <option disabled selected>Keywords</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                  </select>
+                  <select class="sidebar_search_select">
+                    <option disabled selected>Property ID</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                  </select>
+                  <select class="sidebar_search_select">
+                    <option disabled selected>Property Status</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                  </select>
+                  <select class="sidebar_search_select">
+                    <option disabled selected>City</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                  </select>
+                  <select class="sidebar_search_select">
+                    <option disabled selected>Property Type</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                  </select>
+                  <div class="row sidebar_search_row">
+                    <div class="col-lg-6">
+                      <input type="text" class="sidebar_search_input" placeholder="Bedrooms No">
+                    </div>
+                    <div class="col-lg-6">
+                      <input type="text" class="sidebar_search_input" placeholder="Bathrooms No">
+                    </div>
+                  </div>
+
+                  <!-- Filter Price -->
+                  <div class="price_filter">
+                    <div class="price_filter_values d-flex flex-row align-items-center justfy-content-start">
+                      <div>Min Price</div>
+                      <div class="ml-auto">Max Price</div>
+                    </div>
+                    <input type="range" min="0" max="1000" step="10" value="250" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+                  </div>
+
+                  <!-- Filter Area -->
+                  <div class="area_filter">
+                    <div class="price_filter_values d-flex flex-row align-items-center justfy-content-start">
+                      <div>Min Price</div>
+                      <div class="ml-auto">Max Price</div>
+                    </div>
+                    <input type="range" min="0" max="1000" step="10" value="300" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+                  </div>
+                  <button class="sidebar_search_button search_form_button">search</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Realtor -->
+            <div class="sidebar_realtor">
+              <div class="sidebar_realtor_image"><img src="assets/trung-new/images/sidebar_realtor.jpg" alt=""></div>
+              <div class="sidebar_realtor_body text-center">
+                <div class="sidebar_realtor_title"><a href="#">Maria Williams</a></div>
+                <div class="sidebar_realtor_subtitle">Senior Realtor</div>
+                <div class="sidebar_realtor_phone"><span>call us: </span>652 345 3222 11</div>
+                <div class="realtor_link"><a href="#">+</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Property Content -->
+        <div class="col-lg-7 offset-lg-1">
+          <div class="property_content">
+            <div class="property_icons">
+              <div class="property_title">Extra Facilities</div>
+              <div class="property_text property_text_1">
+                <p>Donec ullamcorper nulla non metus auctor fringi lla. Curabitur blandit tempus porttitor.</p>
+              </div>
+              <div class="property_rooms d-flex flex-sm-row flex-column align-items-start justify-content-start">
+
+                <!-- Property Room Item -->
+                <div class="property_room">
+                  <div class="property_room_title">Bedrooms</div>
+                  <div class="property_room_content d-flex flex-row align-items-center justify-content-start">
+                    <div class="room_icon"><img src="assets/trung-new/images/room_1.png" alt=""></div>
+                    <div class="room_num">4</div>
+                  </div>
+                </div>
+
+                <!-- Property Room Item -->
+                <div class="property_room">
+                  <div class="property_room_title">Bathrooms</div>
+                  <div class="property_room_content d-flex flex-row align-items-center justify-content-start">
+                    <div class="room_icon"><img src="assets/trung-new/images/room_2.png" alt=""></div>
+                    <div class="room_num">3</div>
+                  </div>
+                </div>
+
+                <!-- Property Room Item -->
+                <div class="property_room">
+                  <div class="property_room_title">Area</div>
+                  <div class="property_room_content d-flex flex-row align-items-center justify-content-start">
+                    <div class="room_icon"><img src="assets/trung-new/images/room_3.png" alt=""></div>
+                    <div class="room_num">7100 Sq Ft</div>
+                  </div>
+                </div>
+
+                <!-- Property Room Item -->
+                <div class="property_room">
+                  <div class="property_room_title">Patio</div>
+                  <div class="property_room_content d-flex flex-row align-items-center justify-content-start">
+                    <div class="room_icon"><img src="assets/trung-new/images/room_4.png" alt=""></div>
+                    <div class="room_num">1</div>
+                  </div>
+                </div>
+
+                <!-- Property Room Item -->
+                <div class="property_room">
+                  <div class="property_room_title">Garage</div>
+                  <div class="property_room_content d-flex flex-row align-items-center justify-content-start">
+                    <div class="room_icon"><img src="assets/trung-new/images/room_5.png" alt=""></div>
+                    <div class="room_num">2</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Description -->
+
+            <div class="property_description">
+              <div class="property_title">Description</div>
+              <div class="property_text property_text_2">
+                <p>Donec ullamcorper nulla non metus auctor fringi lla. Curabitur blandit tempus porttitor.Sed lectus urna, ultricies sit amet risus eget, euismod imperdiet augue. Duis imperdiet, purus a pellentesque sodales, sapien mauris rhoncus eros, ac blandit elit leo ac diam. Sed lectus urna, ultricies sit amet risus eget, euismod imperdiet augue. Duis imperdiet, purus a pellentesque sodales, sapien mauris rhoncus eros, ac blandit elit leo ac diam</p>
+              </div>
+            </div>
+
+            <!-- Additional Details -->
+
+            <div class="additional_details">
+              <div class="property_title">Additional Details</div>
+              <div class="details_container">
+                <ul>
+                  <li><span>bedroom features: </span>Main Floor Master Bedroom, Walk-In Closet</li>
+                  <li><span>dining area: </span>Breakfast Counter/Bar, Living/Dining Combo</li>
+                  <li><span>doors & windows: </span>Bay Window</li>
+                  <li><span>entry location: </span>Mid Level</li>
+                  <li><span>floors: </span>Raised Foundation, Vinyl Tile, Wall-to-Wall Carpet, Wood</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Property On Map -->
+
+            <div class="property_map">
+              <div class="property_title">Property on map</div>
+              <div class="property_map_container">
+
+                <!-- Google Map -->
+                <div id="google_map" class="google_map">
+                  <div class="map_container">
+                    <div id="map"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+
+  <div class="newsletter">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="assets/trung-new/images/newsletter.jpg" data-speed="0.8"></div>
     <div class="container">
       <div class="row">
         <div class="col">
-          <div
-            class="footer_content d-flex flex-md-row flex-column align-items-center align-items-start justify-content-start">
-            <div class="copyright">
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-              All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-              href="https://colorlib.com" target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-            <div class="footer_logo">
-              <div class="logo">
-                <a href="#">
-                  <div>Major</div>
-                  <div>5 * Hotel</div>
-                </a>
+          <div class="newsletter_content d-flex flex-lg-row flex-column align-items-start justify-content-start">
+            <div class="newsletter_title_container">
+              <div class="newsletter_title">Are you buying or selling?</div>
+              <div class="newsletter_subtitle">Search your dream home</div>
+            </div>
+            <div class="newsletter_form_container">
+              <form action="#" class="newsletter_form">
+                <input type="email" class="newsletter_input" placeholder="Your e-mail address" required="required">
+                <button class="newsletter_button">subscribe now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+  <footer class="footer">
+    <div class="footer_main">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="footer_logo"><a href="#"><img src="assets/trung-new/images/logo_large.png" alt=""></a></div>
+          </div>
+          <div class="col-lg-9 d-flex flex-column align-items-start justify-content-end">
+            <div class="footer_title">Latest Properties</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 footer_col">
+            <div class="footer_about">
+              <div class="footer_about_text">Donec in tempus leo. Aenean ultricies mauris sed quam lacinia lobortis. Cras ut vestibulum enim, in gravida nulla. Curab itur ornare nisl at sagittis cursus.</div>
+            </div>
+          </div>
+          <div class="col-lg-3 footer_col">
+            <div class="footer_latest d-flex flex-row align-items-start justify-content-start">
+              <div><div class="footer_latest_image"><img src="assets/trung-new/images/footer_latest_1.jpg" alt=""></div></div>
+              <div class="footer_latest_content">
+                <div class="footer_latest_location">Miami</div>
+                <div class="footer_latest_name"><a href="#">Sea view property</a></div>
+                <div class="footer_latest_price">$ 1. 234 981</div>
               </div>
             </div>
-            <div class="button footer_button ml-md-auto"><a href="#">book now</a></div>
+          </div>
+          <div class="col-lg-3 footer_col">
+            <div class="footer_latest d-flex flex-row align-items-start justify-content-start">
+              <div><div class="footer_latest_image"><img src="assets/trung-new/images/footer_latest_2.jpg" alt=""></div></div>
+              <div class="footer_latest_content">
+                <div class="footer_latest_location">Miami</div>
+                <div class="footer_latest_name"><a href="#">Town House</a></div>
+                <div class="footer_latest_price">$ 1. 234 981</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 footer_col">
+            <div class="footer_latest d-flex flex-row align-items-start justify-content-start">
+              <div><div class="footer_latest_image"><img src="assets/trung-new/images/footer_latest_3.jpg" alt=""></div></div>
+              <div class="footer_latest_content">
+                <div class="footer_latest_location">Miami</div>
+                <div class="footer_latest_name"><a href="#">Modern House</a></div>
+                <div class="footer_latest_price">$ 1. 234 981</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_bar">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="footer_bar_content d-flex flex-row align-items-center justify-content-start">
+              <div class="cr"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </div>
+              <div class="footer_nav">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="properties.html">Properties</a></li>
+                  <li><a href="news.html">News</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </div>
+              <div class="footer_phone ml-auto"><span>call us: </span>652 345 3222 11</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </footer>
-    </div>
 </div>
+
+<!--<script src="js/jquery-3.2.1.min.js"></script>-->
+<!--<script src="styles/bootstrap4/popper.js"></script>-->
+<!--<script src="styles/bootstrap4/bootstrap.min.js"></script>-->
+<!--<script src="plugins/greensock/TweenMax.min.js"></script>-->
+<!--<script src="plugins/greensock/TimelineMax.min.js"></script>-->
+<!--<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>-->
+<!--<script src="plugins/greensock/animation.gsap.min.js"></script>-->
+<!--<script src="plugins/greensock/ScrollToPlugin.min.js"></script>-->
+<!--<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>-->
+<!--<script src="plugins/easing/easing.js"></script>-->
+<!--<script src="plugins/rangeslider.js-2.3.0/rangeslider.min.js"></script>-->
+<!--<script src="plugins/parallax-js-master/parallax.min.js"></script>-->
+<!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>-->
+<!--<script src="js/property.js"></script>-->
+<!--</body>-->
+<!--</html>-->
