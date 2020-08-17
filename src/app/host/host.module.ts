@@ -4,7 +4,11 @@ import { HouseCreateComponent } from './house-create/house-create.component';
 import { HouseListComponent } from './house-list/house-list.component';
 import { HouseEditComponent } from './house-edit/house-edit.component';
 import {RouterModule, Routes} from "@angular/router";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NgxDropzoneModule} from "ngx-dropzone";
+import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
+import {MatListModule} from "@angular/material/list";
+import {MatIconModule} from "@angular/material/icon";
 
 const routes: Routes = [
   {path: "create", component: HouseCreateComponent},
@@ -22,7 +26,12 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    ReactiveFormsModule
+    NgMultiSelectDropDownModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    NgxDropzoneModule,
+    MatListModule,
+    MatIconModule
   ],
   exports: [],
   providers:[]

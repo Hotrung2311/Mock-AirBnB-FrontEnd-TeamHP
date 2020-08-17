@@ -10,24 +10,28 @@ import {House} from "../_model/house";
 })
 export class HouseService {
 
-  url = environment.API_URL_ACCOUNT;
+  url = 'http://localhost:8080/house';
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllHouses(): Observable<House[]>{
-    return this.httpClient.get<House[]>(this.url);
+  getAllHouses(){
+    return this.httpClient.get(this.url);
   }
 
   getHouseById(id: number): Observable<House>{
     return this.httpClient.get<House>(this.url + '/' + id);
   }
 
+  getHouseByHost() {
+    return this.httpClient.get(this.url + '/getHouseByHost');
+  }
+
   deleteHouse(id: number): Observable<House>{
     return this.httpClient.delete<House>(this.url + '/' + id + '/delete');
   }
 
-  addHouse(house: House): Observable<House>{
-    return this.httpClient.post<House>(this.url + '/create', house);
+  addHouse(house: House){
+    return this.httpClient.post(this.url + '/create', house);
   }
 
   editHouse(house: House): Observable<Account>{

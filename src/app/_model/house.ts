@@ -2,18 +2,19 @@ import {Image} from "./image";
 import {City} from "./city";
 import {Roomtype} from "./roomtype";
 import {Housetype} from "./housetype";
+import {Address} from "./address";
 
 export interface House {
 
   id?: number,
-  address?: string,
   nameHouse?: string,
+  address?: Address,
+  city?: City,
   bathroom?: number,
   bedroom?: number,
   priceHouse?: number,
   account?: Account,
-  city?: City,
-  roomTypes: Roomtype[],
-  houseTypes: Housetype[],
-  images: Image[]
+  roomTypes?: Roomtype[],
+  houseTypes?: Housetype[],
+  images?: Image[]
 }

@@ -1,1 +1,102 @@
-<p>house-create works!</p>
+<div class="container">
+  <h1>Create an apartment</h1>
+<form [formGroup]="HouseForm" (ngSubmit)="onSubmit()" class="was-validated">
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">House Name</label>
+    <input type="email" class="form-control" formControlName="nameHouse" id="exampleInputEmail1">
+  </div>
+
+  <div class="row" formGroupName="address">
+    <div class="col-sm-6">
+      <!-- text input -->
+      <div class="form-group">
+        <label>Address</label>
+        <input type="text" class="form-control" placeholder="Enter ..." formControlName="name" />
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <!-- text input -->
+      <div class="form-group" formGroupName="provinces">
+        <label>Province</label>
+        <select class="form-control" formControlName="id">
+          <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputBathRoom">Bath Room</label>
+    <input type="number" class="form-control" formControlName="bathroom" id="inputBathRoom">
+  </div>
+
+  <div class="form-group">
+    <label for="inputBedRoom">Bed Room</label>
+    <input type="number" class="form-control" formControlName="bedroom" id="inputBedRoom">
+  </div>
+
+
+  <label>Categories:</label>
+  <div class="form-group">
+    <ng-multiselect-dropdown
+      [settings]="settings"
+      [data]="cities"
+      formControlName="categories"
+      *ngIf="settings"
+    >
+    </ng-multiselect-dropdown>
+  </div>
+
+
+  <<label>Room Type</label>
+  <div class="form-group">
+    <ng-multiselect-dropdown
+      [settings]="settings"
+      [data]="roomTypes"
+      formControlName="roomTypes"
+      *ngIf="settings"
+    >
+    </ng-multiselect-dropdown>
+  </div>
+
+
+  <div class="form-group">
+    <label for="inputPrice">Price</label>
+    <input type="number" class="form-control"  formControlName="address" id="inputPrice">
+  </div>
+
+
+  <div class="form-group">
+    <label>Upload picture of your apartment</label>
+    <div
+      class="custom-dropzone"
+      ngx-dropzone
+      [accept]="'image/*'"
+      (change)="onSelect($event)"
+    >
+      <ngx-dropzone-label>
+        <div>
+          <h2>Drop your image here</h2>
+        </div>
+      </ngx-dropzone-label>
+      <ngx-dropzone-image-preview
+        ngProjectAs="ngx-dropzone-preview"
+        *ngFor="let f of files"
+        [file]="f"
+        [removable]="true"
+        (removed)="onRemove(f)"
+      >
+      </ngx-dropzone-image-preview>
+    </div>
+  </div>
+
+  <div class="row justify-content-around">
+    <div>
+      <button type="submit" class="btn btn-success" [disabled]="HouseForm.invalid">Submit</button>|
+      <button type="reset" class="btn btn-danger">Reset</button>
+    </div>
+  </div>
+
+</form>
+</div>
