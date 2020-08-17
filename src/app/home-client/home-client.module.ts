@@ -8,20 +8,18 @@ import {DataTablesModule} from 'angular-datatables';
 import {Routes, RouterModule} from "@angular/router";
 import {NgbCarouselModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { HomePageComponent } from './home-page/home-page.component';
-import { HistoryOrderComponent } from './history-order/history-order.component';
 
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'list', component: ListProductsComponent},
-  {path: 'detail', component: DetailProductComponent},
   {path: 'search', component: SearchProductComponent},
   {path: ':id', component: DetailProductComponent},
 ]
 
 
 @NgModule({
-  declarations: [ListProductsComponent, DetailProductComponent, SearchProductComponent, HomePageComponent, HistoryOrderComponent],
+  declarations: [ListProductsComponent, DetailProductComponent, SearchProductComponent, HomePageComponent],
   exports:[
     DetailProductComponent,
   ],

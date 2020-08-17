@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from "@app/_services/products.service";
 import {Product} from "@app/_model/product";
+import {House} from "@app/_model/house";
+import {HouseService} from "@app/_services/house.service";
 
 @Component({
   selector: 'app-list-products',
@@ -10,7 +12,7 @@ import {Product} from "@app/_model/product";
 export class ListProductsComponent implements OnInit {
 
   constructor(
-    private productsService: ProductsService
+    private houseService: HouseService
   ) { }
 
   ngOnInit(): void {
@@ -18,14 +20,11 @@ export class ListProductsComponent implements OnInit {
 
   }
 
-  productList: Product[] = [];
+  houseList: House[] = [];
 
   loadData(){
-    this.productsService.getAll().subscribe(data =>
-      this.productList = data
+    this.houseService.getAll().subscribe(data =>
+      this.houseList = data
     );
-    console.log(this.productList);
   }
-
-
 }

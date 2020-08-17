@@ -155,16 +155,19 @@
         </div>
       </div>
       <div class="row properties_row">
-        <div class="col-xl-4 col-lg-6 property_col" *ngFor="let product of productList">
+        <div class="col-xl-4 col-lg-6 property_col" *ngFor="let house of houseList">
           <div class="property">
             <div class="property_image">
               <img src="assets/trung-new/images/property_1.jpg" alt="">
               <div class="tag_featured property_tag"><a href="#">Featured</a></div>
             </div>
             <div class="property_body text-center">
-              <div class="property_location">{{product.location}}</div>
-              <div class="property_title"><a [routerLink]="['/home', product.id]">{{product.name}}</a></div>
-              <div class="property_price">{{product.price}}</div>
+              <div class="property_location">{{house.city}}</div>
+              <div class="property_title"><a [routerLink]="['/home', house.id]">{{house.nameHouse}}</a></div>
+              <div class="property_price">
+                <span>VND </span>
+                <span>{{house.priceHouse}}</span>
+              </div>
             </div>
             <div class="property_footer d-flex flex-row align-items-center justify-content-start">
               <div>
@@ -173,13 +176,13 @@
               <div>
                 <div class="property_icon"><img src="assets/trung-new/images/icon_2.png" alt="">
                 </div>
-                <span>{{product.details.room}}</span>
+                <span>{{house.bedroom}}</span>
                 <span> Bedrooms</span>
               </div>
               <div>
                 <div class="property_icon"><img src="assets/trung-new/images/icon_3.png" alt="">
                 </div>
-                <span>{{product.details.bathRoom}}</span>
+                <span>{{house.bathroom}}</span>
                 <span> Bathrooms</span>
               </div>
             </div>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductsService} from "@app/_services/products.service";
 import {Product} from "@app/_model/product";
 import {ActivatedRoute} from "@angular/router";
+import { HouseService } from '@app/_services/house.service';
+import {House} from "@app/_model/house";
 
 @Component({
   selector: 'app-detail-product',
@@ -11,17 +12,16 @@ import {ActivatedRoute} from "@angular/router";
 export class DetailProductComponent implements OnInit {
 
   id: number;
-  product: Product;
+  house: House;
 
   constructor(
-    private productsService: ProductsService,
+    private houseService: HouseService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
     this.id = +this.route.snapshot.params['id'];
-    this.productsService.getById(this.id).subscribe(data=>{ return this.product = data});
-    console.log(this.product)
+    this.houseService.getById(this.id).subscribe(data=>{ return this.house = data});
+    console.log(this.house)
   }
-
 }

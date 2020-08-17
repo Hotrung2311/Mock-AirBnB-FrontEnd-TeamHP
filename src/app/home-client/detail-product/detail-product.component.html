@@ -152,7 +152,7 @@
         <div class="col">
           <div class="intro_content d-flex flex-lg-row flex-column align-items-start justify-content-start">
             <div class="intro_title_container">
-              <div class="intro_title">{{product.name}}</div>
+              <div class="intro_title">{{house.nameHouse}}</div>
               <div class="intro_tags">
                 <ul>
                   <li><a href="#">Hottub</a></li>
@@ -167,7 +167,7 @@
               <div>For Sale</div>
               <div class="intro_price">
                 <span>$</span>
-                <span>{{product.price}}</span>
+                <span>{{house.priceHouse}}</span>
               </div>
             </div>
           </div>
@@ -308,7 +308,7 @@
                   <div class="property_room_title">Bedrooms</div>
                   <div class="property_room_content d-flex flex-row align-items-center justify-content-start">
                     <div class="room_icon"><img src="assets/trung-new/images/room_1.png" alt=""></div>
-                    <div class="room_num">{{product.details.room}}</div>
+                    <div class="room_num">{{house.bedroom}}</div>
                   </div>
                 </div>
 
@@ -317,7 +317,7 @@
                   <div class="property_room_title">Bathrooms</div>
                   <div class="property_room_content d-flex flex-row align-items-center justify-content-start">
                     <div class="room_icon"><img src="assets/trung-new/images/room_2.png" alt=""></div>
-                    <div class="room_num">{{product.details.bathRoom}}</div>
+                    <div class="room_num">{{house.bathroom}}</div>
                   </div>
                 </div>
 
@@ -356,7 +356,7 @@
             <div class="property_description">
               <div class="property_title">Description</div>
               <div class="property_text property_text_2">
-                <p>{{product.details.types.name}}</p>
+                <p>{{house.houseType}}</p>
               </div>
             </div>
 
@@ -374,98 +374,6 @@
                 </ul>
               </div>
             </div>
-
-            <!--            &lt;!&ndash; Property On Map &ndash;&gt;-->
-
-            <!--            <div class="property_map">-->
-            <!--              <div class="property_title">Property on map</div>-->
-            <!--              <div class="property_map_container">-->
-
-            <!--                &lt;!&ndash; Google Map &ndash;&gt;-->
-            <!--                <div id="google_map" class="google_map">-->
-            <!--                  <div class="map_container">-->
-            <!--                    <div id="map"></div>-->
-            <!--                  </div>-->
-            <!--                </div>-->
-
-            <!--              </div>-->
-            <!--            </div>-->
-
-
-            <!--Comment-->
-            <div class="property_map">
-              <hr>
-              <div class="container">
-                <div class="row bootstrap snippets bootdeys">
-                  <div class="col-md-12 col-sm-12">
-                    <div class="comment-wrapper">
-                      <div class="panel panel-info">
-                        <div class="property_title">
-                          Feedback
-                        </div><br>
-                        <div class="panel-body">
-                          <textarea class="form-control" placeholder="write a comment..." rows="3"></textarea>
-                          <br>
-                          <button type="button" style="float: right" class="button">Post</button>
-                          <div class="clearfix"></div>
-                          <hr>
-                          <ul class="media-list">
-                            <li class="media">
-                              <a href="#" class="pull-left">
-                                <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
-                              </a>
-                              <div class="media-body">
-                                <span class="text-muted pull-right">
-                                    <small class="text-muted">30 min ago</small>
-                                </span>
-                                <strong class="text-success">@MartinoMont</strong>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                  Lorem ipsum dolor sit amet, <a href="#">#consecteturadipiscing </a>.
-                                </p>
-                              </div>
-                            </li>
-                            <li class="media">
-                              <a href="#" class="pull-left">
-                                <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle">
-                              </a>
-                              <div class="media-body">
-                                <span class="text-muted pull-right">
-                                    <small class="text-muted">30 min ago</small>
-                                </span>
-                                <strong class="text-success">@LaurenceCorreil</strong>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                  Lorem ipsum dolor <a href="#">#ipsumdolor </a>adipiscing elit.
-                                </p>
-                              </div>
-                            </li>
-                            <li class="media">
-                              <a href="#" class="pull-left">
-                                <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-circle">
-                              </a>
-                              <div class="media-body">
-                                <span class="text-muted pull-right">
-                                    <small class="text-muted">30 min ago</small>
-                                </span>
-                                <strong class="text-success">@JohnNida</strong>
-                                <p>
-                                  Lorem ipsum dolor <a href="#">#sitamet</a> sit amet, consectetur adipiscing elit.
-                                </p>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-
           </div>
         </div>
       </div>

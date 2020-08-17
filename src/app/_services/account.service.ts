@@ -1,36 +1,45 @@
-// import { Injectable } from '@angular/core';
-// import {environment} from "../../environments/environment";
-// import {HttpClient} from "@angular/common/http";
-// import {Observable} from "rxjs";
-// import {Account} from "../_model/iaccount";
-//
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AccountService {
-//
-//   url = environment.API_URL_ACCOUNT;
-//
-//   constructor(private httpClient: HttpClient) { }
-//
-//   getAll(): Observable<Account[]>{
-//     return this.httpClient.get<Account[]>(this.url);
-//   }
-//
-//   getById(id: number): Observable<Account>{
-//     return this.httpClient.get<Account>(this.url + '/' + id);
-//   }
-//
-//   delete(id: number): Observable<Account>{
-//     return this.httpClient.delete<Account>(this.url + '/' + id + '/delete');
-//   }
-//
-//   add(account: Account): Observable<Account>{
-//     return this.httpClient.post<Account>(this.url + '/create', account);
-//   }
-//
-//   edit(account: Account): Observable<Account>{
-//     return this.httpClient.put<Account>(this.url + account.id + '/update', account);
-//   }
-//
-// }
+import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {Account} from "../_model/account";
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AcccountService {
+
+  url = "http://localhost:8080/account";
+
+  constructor(private httpClient: HttpClient) { }
+
+  getAll(): Observable<Account[]>{
+    // return this.httpClient.get<Product[]>(this.url);
+    return null;
+  }
+
+  getById(id: number): Observable<Account>{
+    // return this.httpClient.get<Product>(this.url + '/' + id);
+    return null;
+  }
+
+  delete(id: number): Observable<Account>{
+    // return this.httpClient.delete<Product>(this.url + '/' + id + '/delete');
+    return null;
+  }
+
+
+  add(account: Account): Observable<Account>{
+    // return this.httpClient.post<Product>(this.url + '/create', account);
+    return null;
+  }
+
+  edit(product: Account): Observable<Account>{
+    // return this.httpClient.put<Product>(this.url + product.id + '/update', product);
+    return null;
+  }
+
+  getHistoryOrder(): Observable<Account[]>{
+    return null;
+  }
+}

@@ -12,6 +12,9 @@ import {ProductEditComponent} from "@app/host/product-edit/product-edit.componen
 import {ProductDeleteComponent} from "@app/host/product-delete/product-delete.component";
 import {ProductDetailComponent} from "@app/host/product-detail/product-detail.component";
 import {HomeClientModule} from "@app/home-client/home-client.module";
+import {UserModule} from "@app/user/user.module";
+
+import { JwPaginationModule } from 'jw-angular-pagination';
 
 
 @NgModule({
@@ -22,7 +25,9 @@ import {HomeClientModule} from "@app/home-client/home-client.module";
     AppRoutingModule,
     RouterModule,
     FormsModule,
-    HomeClientModule
+    HomeClientModule,
+    UserModule,
+    JwPaginationModule
   ],
   declarations: [
     AppComponent,

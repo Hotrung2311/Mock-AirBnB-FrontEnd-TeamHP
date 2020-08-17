@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductsService} from "@app/_services/products.service";
-import {Product} from "@app/_model/product";
+import {HouseService} from "@app/_services/house.service";
+import {House} from "@app/_model/house";
 
 @Component({
   selector: 'app-home-page',
@@ -10,7 +10,7 @@ import {Product} from "@app/_model/product";
 export class HomePageComponent implements OnInit {
 
   constructor(
-    private productsService: ProductsService
+    private houseService: HouseService
   ) { }
 
   ngOnInit(): void {
@@ -18,13 +18,12 @@ export class HomePageComponent implements OnInit {
 
   }
 
-  productList: Product[] = [];
+  houseList: House[] = [];
 
   loadData(){
-    this.productsService.getAll().subscribe(data =>
-      this.productList = data
+    this.houseService.getAll().subscribe(data =>
+      this.houseList = data
     );
-    console.log(this.productList);
   }
 
 
