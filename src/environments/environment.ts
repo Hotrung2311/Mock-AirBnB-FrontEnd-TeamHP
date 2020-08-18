@@ -15,12 +15,12 @@ export const environment = {
     measurementId: "G-FNJQDCDNXZ"
   },
 
-  API_URL_PRODUCT: "http://localhost:8080/products",
-  API_URL_ACCOUNT: "http://localhost:8080/accounts",
-  API_URL_ORDER: "http://localhost:8080/orders",
-  API_URL_IMAGE: "http://localhost:8080/images",
-  API_URL_TYPE: "http://localhost:8080/types",
-  API_URL_DETAIL: "http://localhost:8080/details",
+  // API_URL_PRODUCT: "http://localhost:8080/products",
+  // API_URL_ACCOUNT: "http://localhost:8080/accounts",
+  // API_URL_ORDER: "http://localhost:8080/orders",
+  // API_URL_IMAGE: "http://localhost:8080/images",
+  // API_URL_TYPE: "http://localhost:8080/types",
+  // API_URL_DETAIL: "http://localhost:8080/details",
 
   production: false
 };

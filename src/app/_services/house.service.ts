@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Account} from "../_model/account";
 import {House} from "../_model/house";
+import {ImageHouse} from "@app/_model/imageHouse";
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,14 @@ export class HouseService {
 
   getHouseByHost() {
     return this.httpClient.get(this.url + '/getHouseByHost');
+  }
+
+  getDetailHouseById(id: number) {
+    return this.httpClient.get(`http://localhost:8080/house/list/${id}`);
+  }
+
+  updateHouseImage(id: number, imageHouses: ImageHouse[]) {
+    return this.httpClient.put(`http://localhost:8080/house/update-apartment-pictures/${id}`, imageHouses);
   }
 
   deleteHouse(id: number): Observable<House>{

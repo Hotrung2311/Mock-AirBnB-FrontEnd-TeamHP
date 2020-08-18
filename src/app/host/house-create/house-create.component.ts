@@ -5,7 +5,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AngularFirestore} from "@angular/fire/firestore";
 import {AngularFireStorage} from "@angular/fire/storage";
 import {House} from "@app/_model/house";
-import {Image} from "@app/_model/image";
+import {ImageHouse} from "@app/_model/imageHouse";
 import {Roomtype} from "@app/_model/roomtype";
 import {Housetype} from "@app/_model/housetype";
 import {City} from "@app/_model/city";
@@ -53,14 +53,12 @@ export class HouseCreateComponent implements OnInit {
   };
 
   HouseForm: FormGroup;
-
+  house: House;
   houseTypes: Housetype[] = [];
   roomTypes: Roomtype[] = [];
   cities: City[] = [];
-
   files: File[] = [];
-  images: Image[] = [];
-  house: House;
+  images: ImageHouse[] = [];
 
   constructor(private houseService: HouseService,
               private uploadService: UploadService,
@@ -79,28 +77,26 @@ export class HouseCreateComponent implements OnInit {
     });
 
     this.HouseForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      nameHouse: ['', Validators.required],
       bathroom: ['', Validators.required],
       bedroom: ['', Validators.required],
-      priceByDate: ['', Validators.required],
-      // description: ['', Validators.required],
+      priceHouse: ['', Validators.required],
       houseTypes: this.formBuilder.control([]),
+      roomTypes: this.formBuilder.control([]),
       address: this.formBuilder.group({
         name: ['', Validators.required],
         cities: this.formBuilder.group({
           id: ['', Validators.required],
         }),
       }),
-      roomTypes: this.formBuilder.control([]),
     });
   }
 
-
   async getList() {
     return Promise.all([
-      this.allListService.getCategoryList().toPromise(),
+      this.allListService.getHouseTypeList().toPromise(),
       this.allListService.getRoomTypeList().toPromise(),
-      this.allListService.getProvinceList().toPromise(),
+      this.allListService.getCityList().toPromise(),
     ]);
   }
 
@@ -135,7 +131,7 @@ export class HouseCreateComponent implements OnInit {
         console.log(this.images);
       })
       .then(() => {
-        this.house.images = this.images;
+        this.house.imageHouses = this.images;
         console.log(this.house);
         this.houseService
           .addHouse(this.house)

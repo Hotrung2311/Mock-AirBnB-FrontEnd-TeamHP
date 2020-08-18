@@ -6,22 +6,22 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AllListService {
-  categoryUrl = 'http://localhost:8080/api/category';
+  houseTypeUrl = 'http://localhost:8080/api/house-type';
   roomTypeUrl = 'http://localhost:8080/api/room-type';
-  provinceUrl = 'http://localhost:8080/api/province';
+  cityUrl = 'http://localhost:8080/api/city';
 
   constructor(private http: HttpClient) { }
 
-  getCategoryList(): Observable<any> {
-    return this.http.get(this.categoryUrl);
+  getHouseTypeList(): Observable<any> {
+    return this.http.get(this.houseTypeUrl);
   }
 
   getRoomTypeList(): Observable<any>{
     return this.http.get(this.roomTypeUrl);
   }
 
-  getProvinceList(): Observable<any>{
-    return this.http.get(this.provinceUrl);
+  getCityList(): Observable<any>{
+    return this.http.get(this.cityUrl);
   }
 
 }

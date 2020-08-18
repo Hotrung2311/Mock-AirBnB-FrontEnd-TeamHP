@@ -1,12 +1,16 @@
 <div class="container " style="margin: 50px auto;">
   <h1>Your apartment</h1>
   <mat-list>
-    <mat-list-item *ngFor="let house of houses">
-      <img matListAvatar [src]="house.images[0].imageUrl" alt="...">
-      <a routerLink="/host/apartment/{{house.id}}" matLine> {{house.nameHouse}} </a>
+    <mat-list-item *ngFor="let house of houses; let i = index">
+      <img matListAvatar [src]="house.imageHouses[i]?.imageUrl " alt="...">
+      <h3>{{house.bathroom}}</h3>
+      <h3>{{house.bedroom}}</h3>
+      <h3>{{house.priceHouse}}</h3>
+<!--      chi tiet phong-->
+      <a routerLink="/host/apartment/{{house.id}}" matLine> {{house?.nameHouse}} </a>
       <p matLine>
-        <span> {{house.address.name}} </span>
-        <span class="demo-2"> {{house.address.city.name}} </span>
+        <span> {{house.address?.name}} </span>
+        <span class="demo-2"> {{house.address?.city?.name}} </span>
       </p>
     </mat-list-item>
   </mat-list>
