@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Product} from "../_model/product";
 import {House} from "../_model/house";
+import {Vote} from '../_model/vote';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,10 @@ export class HouseService {
 
   edit(house: House): Observable<House>{
     return this.httpClient.put<House>(this.url + house.id + 'update', house);
+  }
+
+  vote(votes: Vote): Observable<Vote> {
+    return this.httpClient.post(this.url+'vote' ,votes)
+
   }
 }

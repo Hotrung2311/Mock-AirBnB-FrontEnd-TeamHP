@@ -10,6 +10,7 @@ export interface House {
   priceHouse: number;
   account: Account;
   city: City;
+  voteNumber?: number;
   roomType: string;
   houseType: string;
   images?: Image[];

@@ -8,6 +8,7 @@ import {DataTablesModule} from 'angular-datatables';
 import {Routes, RouterModule} from "@angular/router";
 import {NgbCarouselModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { HomePageComponent } from './home-page/home-page.component';
+import {FormsModule} from '@angular/forms';
 
 
 const routes: Routes = [
@@ -23,12 +24,13 @@ const routes: Routes = [
   exports:[
     RouterModule
   ],
-    imports: [
-        CommonModule,
-        DataTablesModule,
-        RouterModule.forChild(routes),
-        NgbCarouselModule,
-        NgbModule
-    ]
+  imports: [
+    CommonModule,
+    DataTablesModule,
+    RouterModule.forChild(routes),
+    NgbCarouselModule,
+    NgbModule,
+    FormsModule
+  ]
 })
 export class HomeClientModule { }

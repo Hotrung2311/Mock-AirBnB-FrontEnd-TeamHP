@@ -155,7 +155,7 @@
               <div class="intro_title">{{house.nameHouse}}</div>
               <div class="intro_tags">
                 <ul>
-                  <li><a href="#">Hottub</a></li>
+                  <li>{{house.voteNumber}}<ngb-rating max="5" [(ngModel)]="rates" (rateChange)="rate()"></ngb-rating></li>
                   <li><a href="#">Swimming Pool</a></li>
                   <li><a href="#">Garden</a></li>
                   <li><a href="#">Patio</a></li>
