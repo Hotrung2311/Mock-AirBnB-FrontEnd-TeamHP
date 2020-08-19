@@ -21,9 +21,22 @@
             </nav>
             <div class="phone_num ml-auto">
               <div class="phone_num_inner">
-                <img src="assets/trung-new/images/phone.png" alt=""><span>652-345 3222 11</span>
+                <button [routerLink]="['/login']"> đăng nhập</button>
+
+<!--                <div class="dropdown">-->
+<!--                  <a class="nav-link dropdown-toggle" href="#" id="navbar" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                    Dropdown-->
+<!--                  </a>-->
+<!--                  <div class="dropdown-menu" aria-labelledby="navbar">-->
+<!--                    <a class="dropdown-item" href="#">Action</a>-->
+<!--                    <a class="dropdown-item" href="#">Another action</a>-->
+<!--                    <div class="dropdown-divider"></div>-->
+<!--                    <a class="dropdown-item" href="#">Something else here</a>-->
+<!--                  </div>-->
+<!--                </div>-->
               </div>
             </div>
+
             <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
           </div>
         </div>
@@ -35,11 +48,15 @@
 
   <div class="menu trans_500">
     <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
-      <div class="menu_close_container"><div class="menu_close"></div></div>
+      <div class="menu_close_container">
+        <div class="menu_close"></div>
+      </div>
       <div class="logo menu_logo">
         <a href="#">
           <div class="logo_container d-flex flex-row align-items-start justify-content-start">
-            <div class="logo_image"><div><img src="assets/trung-new/images/logo.png" alt=""></div></div>
+            <div class="logo_image">
+              <div><img src="assets/trung-new/images/logo.png" alt=""></div>
+            </div>
           </div>
         </a>
       </div>
@@ -62,41 +79,42 @@
     <!-- Home Slider -->
     <div class="home_slider_container">
 
-        <!-- Slide -->
-        <div>
-          <div class="home_slider_background" style="background-image:url(assets/trung-new/images/home_slider_1.jpg); height: 700px"></div>
-          <div class="slide_container">
-            <div class="container">
-              <div class="row">
-                <div class="col">
-                  <div class="slide_content" style="margin-top: 320px;">
-                    <div class="home_subtitle">super offer</div>
-                    <div class="home_title">Villa with sea view</div>
-                    <div class="home_details">
-                      <ul class="home_details_list d-flex flex-row align-items-center justify-content-start">
-                        <li>
-                          <div class="home_details_image"><img src="assets/trung-new/images/icon_1.png" alt=""></div>
-                          <span> 650 Ftsq</span>
-                        </li>
-                        <li>
-                          <div class="home_details_image"><img src="assets/trung-new/images/icon_2.png" alt=""></div>
-                          <span> 3 Bedrooms</span>
-                        </li>
-                        <li>
-                          <div class="home_details_image"><img src="assets/trung-new/images/icon_3.png" alt=""></div>
-                          <span> 2 Bathrooms</span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="home_price">$ 1. 245 999</div>
+      <!-- Slide -->
+      <div>
+        <div class="home_slider_background"
+             style="background-image:url(assets/trung-new/images/home_slider_1.jpg); height: 700px"></div>
+        <div class="slide_container">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="slide_content" style="margin-top: 320px;">
+                  <div class="home_subtitle">super offer</div>
+                  <div class="home_title">Villa with sea view</div>
+                  <div class="home_details">
+                    <ul class="home_details_list d-flex flex-row align-items-center justify-content-start">
+                      <li>
+                        <div class="home_details_image"><img src="assets/trung-new/images/icon_1.png" alt=""></div>
+                        <span> 650 Ftsq</span>
+                      </li>
+                      <li>
+                        <div class="home_details_image"><img src="assets/trung-new/images/icon_2.png" alt=""></div>
+                        <span> 3 Bedrooms</span>
+                      </li>
+                      <li>
+                        <div class="home_details_image"><img src="assets/trung-new/images/icon_3.png" alt=""></div>
+                        <span> 2 Bathrooms</span>
+                      </li>
+                    </ul>
                   </div>
+                  <div class="home_price">$ 1. 245 999</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
+
+    </div>
   </div>
 
   <!-- Home Search -->
@@ -184,17 +202,21 @@
                       <div class="tag_featured property_tag"><a href="#">Featured</a></div>
                     </div>
                     <div class="recent_item_body text-center">
-                      <div class="recent_item_location">{{house.city}}</div>
-                      <div class="recent_item_title"><a [routerLink]="['/home',house.id]">{{house.nameHouse}}</a></div>
+                      <div class="recent_item_location">{{house.city.name}}</div>
+                      <div class="recent_item_title"><a [routerLink]="['/home/detail',house.id]">{{house.nameHouse}}</a></div>
                       <div class="recent_item_price">{{house.priceHouse}}</div>
                     </div>
                     <div class="recent_item_footer d-flex flex-row align-items-center justify-content-start">
-                      <div><div class="recent_icon"><img src="assets/trung-new/images/icon_1.png" alt=""></div><span>650 Ftsq</span></div>
-                      <div><div class="recent_icon"><img src="assets/trung-new/images/icon_2.png" alt=""></div>
+                      <div>
+                        <div class="recent_icon"><img src="assets/trung-new/images/icon_1.png" alt=""></div>
+                        <span>650 Ftsq</span></div>
+                      <div>
+                        <div class="recent_icon"><img src="assets/trung-new/images/icon_2.png" alt=""></div>
                         <span>{{house.bedroom}}</span>
                         <span> Bedrooms</span>
                       </div>
-                      <div><div class="recent_icon"><img src="assets/trung-new/images/icon_3.png" alt=""></div>
+                      <div>
+                        <div class="recent_icon"><img src="assets/trung-new/images/icon_3.png" alt=""></div>
                         <span>{{house.bathroom}}</span>
                         <span> Bathrooms</span>
                       </div>
@@ -206,8 +228,10 @@
             </div>
 
             <div class="recent_slider_nav_container d-flex flex-row align-items-start justify-content-start">
-              <div class="recent_slider_nav recent_slider_prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-              <div class="recent_slider_nav recent_slider_next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+              <div class="recent_slider_nav recent_slider_prev"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+              </div>
+              <div class="recent_slider_nav recent_slider_next"><i class="fa fa-chevron-right" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
           <div class="button recent_button"><a href="#">see more</a></div>
@@ -336,7 +360,10 @@
         <div class="col-lg-4 testimonial_col">
           <div class="testimonial">
             <div class="testimonial_title">Amazing home for me</div>
-            <div class="testimonial_text">Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul.</div>
+            <div class="testimonial_text">Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet
+              tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus
+              blandit. Etiam nec odio vestibul.
+            </div>
             <div class="testimonial_author_image"><img src="assets/trung-new/images/testimonial_1.jpg" alt=""></div>
             <div class="testimonial_author"><a href="#">Diane Smith</a><span>, Client</span></div>
             <div class="rating_r rating_r_5 testimonial_rating"><i></i><i></i><i></i><i></i><i></i></div>
@@ -347,7 +374,10 @@
         <div class="col-lg-4 testimonial_col">
           <div class="testimonial">
             <div class="testimonial_title">Friendly Realtors</div>
-            <div class="testimonial_text">Nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna. Pellentesque sit amet tellus blandit.</div>
+            <div class="testimonial_text">Nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et
+              tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna.
+              Pellentesque sit amet tellus blandit.
+            </div>
             <div class="testimonial_author_image"><img src="assets/trung-new/images/testimonial_2.jpg" alt=""></div>
             <div class="testimonial_author"><a href="#">Michael Duncan</a><span>, Client</span></div>
             <div class="rating_r rating_r_5 testimonial_rating"><i></i><i></i><i></i><i></i><i></i></div>
@@ -358,7 +388,10 @@
         <div class="col-lg-4 testimonial_col">
           <div class="testimonial">
             <div class="testimonial_title">Very good communication</div>
-            <div class="testimonial_text">Retiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul.</div>
+            <div class="testimonial_text">Retiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit
+              amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et
+              tellus blandit. Etiam nec odio vestibul.
+            </div>
             <div class="testimonial_author_image"><img src="assets/trung-new/images/testimonial_3.jpg" alt=""></div>
             <div class="testimonial_author"><a href="#">Shawn Gaines</a><span>, Client</span></div>
             <div class="rating_r rating_r_5 testimonial_rating"><i></i><i></i><i></i><i></i><i></i></div>
@@ -372,7 +405,8 @@
   <!-- Newsletter -->
 
   <div class="newsletter">
-    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="assets/trung-new/images/newsletter.jpg" data-speed="0.8"></div>
+    <div class="parallax_background parallax-window" data-parallax="scroll"
+         data-image-src="assets/trung-new/images/newsletter.jpg" data-speed="0.8"></div>
     <div class="container">
       <div class="row">
         <div class="col">
@@ -409,12 +443,16 @@
         <div class="row">
           <div class="col-lg-3 footer_col">
             <div class="footer_about">
-              <div class="footer_about_text">Donec in tempus leo. Aenean ultricies mauris sed quam lacinia lobortis. Cras ut vestibulum enim, in gravida nulla. Curab itur ornare nisl at sagittis cursus.</div>
+              <div class="footer_about_text">Donec in tempus leo. Aenean ultricies mauris sed quam lacinia lobortis.
+                Cras ut vestibulum enim, in gravida nulla. Curab itur ornare nisl at sagittis cursus.
+              </div>
             </div>
           </div>
           <div class="col-lg-3 footer_col">
             <div class="footer_latest d-flex flex-row align-items-start justify-content-start">
-              <div><div class="footer_latest_image"><img src="assets/trung-new/images/footer_latest_1.jpg" alt=""></div></div>
+              <div>
+                <div class="footer_latest_image"><img src="assets/trung-new/images/footer_latest_1.jpg" alt=""></div>
+              </div>
               <div class="footer_latest_content">
                 <div class="footer_latest_location">Miami</div>
                 <div class="footer_latest_name"><a href="#">Sea view property</a></div>
@@ -424,7 +462,9 @@
           </div>
           <div class="col-lg-3 footer_col">
             <div class="footer_latest d-flex flex-row align-items-start justify-content-start">
-              <div><div class="footer_latest_image"><img src="assets/trung-new/images/footer_latest_2.jpg" alt=""></div></div>
+              <div>
+                <div class="footer_latest_image"><img src="assets/trung-new/images/footer_latest_2.jpg" alt=""></div>
+              </div>
               <div class="footer_latest_content">
                 <div class="footer_latest_location">Miami</div>
                 <div class="footer_latest_name"><a href="#">Town House</a></div>
@@ -434,7 +474,9 @@
           </div>
           <div class="col-lg-3 footer_col">
             <div class="footer_latest d-flex flex-row align-items-start justify-content-start">
-              <div><div class="footer_latest_image"><img src="assets/trung-new/images/footer_latest_3.jpg" alt=""></div></div>
+              <div>
+                <div class="footer_latest_image"><img src="assets/trung-new/images/footer_latest_3.jpg" alt=""></div>
+              </div>
               <div class="footer_latest_content">
                 <div class="footer_latest_location">Miami</div>
                 <div class="footer_latest_name"><a href="#">Modern House</a></div>
@@ -451,7 +493,9 @@
           <div class="col">
             <div class="footer_bar_content d-flex flex-row align-items-center justify-content-start">
               <div class="cr"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                  href="https://colorlib.com" target="_blank">Colorlib</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               </div>
               <div class="footer_nav">
@@ -471,3 +515,7 @@
     </div>
   </footer>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

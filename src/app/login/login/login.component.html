@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="card">
+  <h4 class="card-header">Login</h4>
+  <div class="card-body">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" formControlName="username" class="form-control">
+        <div class="invalid-feedback">
+          <div>
+            <div>Username is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" [formGroup]="loginForm">
+        <label>Password</label>
+        <input type="password" formControlName="password" class="form-control">
+        <div class="invalid-feedback">
+          <div>
+            <div>Password is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">
+          Login
+        </button>
+        <a routerLink="/login/register" class="btn btn-link">Register</a>
+      </div>
+    </form>
+  </div>
+</div>
