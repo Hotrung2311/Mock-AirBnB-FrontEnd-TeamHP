@@ -13,6 +13,8 @@ import Swal from 'sweetalert2';
 import {Res} from "@app/_model/res";
 import {AllListService} from "@app/_services/all-list.service";
 import {IDropdownSettings} from "ng-multiselect-dropdown";
+import {Account} from "@app/_model/account";
+// import {Address} from "@app/_model/address";
 
 const Toast = Swal.mixin({
   toast: true,
@@ -53,7 +55,15 @@ export class HouseCreateComponent implements OnInit {
   };
 
   HouseForm: FormGroup;
-  house: House;
+  house: House = {
+    account: {
+      id:-1
+    }
+  };
+  hardFixHost: Account = {
+    id: 1,
+  };
+  // account: Account;
   houseTypes: Housetype[] = [];
   roomTypes: Roomtype[] = [];
   cities: City[] = [];
@@ -78,17 +88,13 @@ export class HouseCreateComponent implements OnInit {
 
     this.HouseForm = this.formBuilder.group({
       nameHouse: ['', Validators.required],
+      address: ['', Validators.required],
       bathroom: ['', Validators.required],
       bedroom: ['', Validators.required],
-      priceHouse: ['', Validators.required],
       houseTypes: this.formBuilder.control([]),
       roomTypes: this.formBuilder.control([]),
-      address: this.formBuilder.group({
-        name: ['', Validators.required],
-        cities: this.formBuilder.group({
-          id: ['', Validators.required],
-        }),
-      }),
+      cities: this.formBuilder.control([]),
+      priceHouse: ['', Validators.required],
     });
   }
 
@@ -110,6 +116,7 @@ export class HouseCreateComponent implements OnInit {
       return;
     }
     console.log('saving');
+
     this.house = this.HouseForm.value;
     const uploadArray = [];
     this.files.forEach((file) => {

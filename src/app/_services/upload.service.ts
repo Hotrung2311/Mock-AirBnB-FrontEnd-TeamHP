@@ -14,7 +14,7 @@ export class UploadService {
 
   startUpload(file: File) {
     // The storage path
-    const path = `hotel/${Date.now()}_${file.name}`;
+    const path = `${file.name.split('.').slice(0, -1).join('.')}_${Date.now()}`;
 
     // Reference to storage bucket
     const ref = this.storage.ref(path);

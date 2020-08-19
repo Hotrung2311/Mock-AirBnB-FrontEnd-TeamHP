@@ -1,7 +1,10 @@
-import {Address} from "./address";
+// import {Address} from "./address";
+
+import {House} from "@app/_model/house";
 
 export interface City {
   id?:number,
-  name?:string,
-  address?: Address[]
+  nameCity?:string,
+  houses?: House []
+  // addressList?: Address[]
 }

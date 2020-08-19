@@ -8,10 +8,10 @@ import {RouterModule} from '@angular/router';
 import {HostModule} from "@app/host/host.module";
 import {AngularFireModule} from "@angular/fire";
 import {AngularFirestoreModule} from "@angular/fire/firestore";
-import {environment} from "../environments/environment"
 import {AngularFireStorageModule} from "@angular/fire/storage";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
+import {environment} from "@environments/environment";
 
 @NgModule({
   declarations: [

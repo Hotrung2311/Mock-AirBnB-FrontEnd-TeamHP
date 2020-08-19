@@ -4,7 +4,7 @@
 
 export const environment = {
 
-  firebaseConfig : {
+  firebaseConfig: {
     apiKey: "AIzaSyBAXi6Zbvv6t-AK0Kcak9m7EtpQcDKXLhg",
     authDomain: "upload-image-41211.firebaseapp.com",
     databaseURL: "https://upload-image-41211.firebaseio.com",
