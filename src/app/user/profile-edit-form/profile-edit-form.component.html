@@ -146,36 +146,27 @@
 
   <!--Booking form-->
   <div class="container">
-    <form class="text-center border border-light p-5" action="#!">
+    <p>{{abc}}</p>
+    <form class="text-center border border-light p-5" [formGroup]="editForm" (ngSubmit)="edit()" method="post">
+      <p class="h4 mb-4">User Profile</p>
 
-      <p class="h4 mb-4">Reservations</p>
+      <p style="float: left;">User Name</p>
+      <input type="text" class="form-control mb-4" placeholder="Name" formControlName="username">
 
-      <p>Customer informations</p>
-      <!-- Name -->
-      <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
+      <p style="float: left;">Password</p>
+      <input type="password" class="form-control mb-4" placeholder="Password" formControlName="password">
 
-      <!-- Email -->
-      <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
+      <p style="float: left;">Phone</p>
+      <input type="text" class="form-control mb-4" placeholder="Phone number" formControlName="phoneNumber">
 
-      <input value="user id" hidden>
+      <p style="float: left;">Address</p>
+      <input type="text" class="form-control mb-4" placeholder="Address" formControlName="accountAddress">
 
-      <!-- Subject -->
-      <p>Details</p>
-      <input class="form-control mb-4" value="House name" readonly>
-      <input class="form-control mb-4" value="House id" hidden>
-      <input type="text" placeholder="Date of arrival" class="form-control mb-4" bsDatepicker>
-      <input type="text" placeholder="Date of departure" class="form-control mb-4" bsDatepicker>
-
-
-
-      <!-- Copy -->
-      <div class="custom-control custom-checkbox mb-4">
-        <input type="checkbox" class="custom-control-input" id="defaultContactFormCopy">
-        <label class="custom-control-label" for="defaultContactFormCopy">Send me a copy of this message</label>
-      </div>
+      <p style="float: left;">Email</p>
+      <input type="email" class="form-control mb-4" placeholder="E-mail" formControlName="email">
 
       <!-- Send button -->
-      <button class="btn btn-info btn-block" type="submit">Send</button>
+      <button class="btn btn-info btn-block" type="submit">Save</button>
 
     </form>
     <!-- Default form contact -->

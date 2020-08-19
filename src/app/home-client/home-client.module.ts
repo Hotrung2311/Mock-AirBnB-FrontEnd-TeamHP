@@ -14,14 +14,14 @@ const routes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'list', component: ListProductsComponent},
   {path: 'search', component: SearchProductComponent},
-  {path: ':id', component: DetailProductComponent},
+  {path: 'detail/:id', component: DetailProductComponent},
 ]
 
 
 @NgModule({
   declarations: [ListProductsComponent, DetailProductComponent, SearchProductComponent, HomePageComponent],
   exports:[
-    DetailProductComponent,
+    RouterModule
   ],
     imports: [
         CommonModule,

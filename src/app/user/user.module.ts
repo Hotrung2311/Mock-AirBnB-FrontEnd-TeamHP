@@ -6,22 +6,29 @@ import {RouterModule, Routes} from "@angular/router";
 import {DetailProductComponent} from "../home-client/detail-product/detail-product.component";
 import {SearchProductComponent} from "../home-client/search-product/search-product.component";
 import { BookingFormComponent } from './booking-form/booking-form.component';
+import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
+import { ProfileEditFormComponent } from './profile-edit-form/profile-edit-form.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {path: 'history/:id', component: BookingHistoryComponent},
   {path: 'search', component: SearchProductComponent},
+  {path: 'booking' , component: BookingFormComponent},
+  {path: 'profile/edit' , component: ProfileEditFormComponent},
   {path: ':id', component: DetailProductComponent},
-  {path: 'book' , component: BookingFormComponent},
 ]
 
 @NgModule({
-  declarations: [BookingHistoryComponent, SearchComponent, BookingFormComponent],
+  declarations: [BookingHistoryComponent, SearchComponent, BookingFormComponent, ProfileEditFormComponent],
   exports: [
-    BookingFormComponent
+    // BookingFormComponent,
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    BsDatepickerModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class UserModule { }

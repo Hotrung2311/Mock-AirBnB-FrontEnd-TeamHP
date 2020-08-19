@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {AcccountService} from "@app/_services/account.service";
 import {Account} from "@app/_model/account.ts";
 import {BookingService} from "@app/_services/booking.service";
 import {Booking} from "@app/_model/booking";

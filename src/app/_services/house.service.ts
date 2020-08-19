@@ -8,7 +8,7 @@ import {House} from "../_model/house";
   providedIn: 'root'
 })
 export class HouseService {
-  url = "http://localhost:8080/house";
+  url = "http://localhost:8080/house/";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,18 +17,18 @@ export class HouseService {
   }
 
   getById(id: number): Observable<House>{
-    return this.httpClient.get<House>(this.url + '/detail/' + id);
+    return this.httpClient.get<House>(this.url + 'detail/' + id);
   }
 
   delete(id: number): Observable<House>{
-    return this.httpClient.delete<House>(this.url + '/' + id + '/delete');
+    return this.httpClient.delete<House>(this.url + id + '/delete');
   }
 
   add(house: House): Observable<House>{
-    return this.httpClient.post<House>(this.url + '/create', house);
+    return this.httpClient.post<House>(this.url + 'create', house);
   }
 
   edit(house: House): Observable<House>{
-    return this.httpClient.put<House>(this.url + house.id + '/update', house);
+    return this.httpClient.put<House>(this.url + house.id + 'update', house);
   }
 }

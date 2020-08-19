@@ -11,8 +11,10 @@ import {ProductCreateComponent} from "@app/host/product-create/product-create.co
 import {ProductEditComponent} from "@app/host/product-edit/product-edit.component";
 import {ProductDeleteComponent} from "@app/host/product-delete/product-delete.component";
 import {ProductDetailComponent} from "@app/host/product-detail/product-detail.component";
-import {HomeClientModule} from "@app/home-client/home-client.module";
-import {UserModule} from "@app/user/user.module";
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 
 import { JwPaginationModule } from 'jw-angular-pagination';
 
@@ -25,9 +27,9 @@ import { JwPaginationModule } from 'jw-angular-pagination';
     AppRoutingModule,
     RouterModule,
     FormsModule,
-    HomeClientModule,
-    UserModule,
-    JwPaginationModule
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
+    JwPaginationModule,
   ],
   declarations: [
     AppComponent,

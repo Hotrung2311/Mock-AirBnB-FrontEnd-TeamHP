@@ -7,9 +7,9 @@ import {Account} from "../_model/account";
 @Injectable({
   providedIn: 'root'
 })
-export class AcccountService {
+export class AccountService {
 
-  url = "http://localhost:8080/account";
+  url = "http://localhost:8080";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -19,8 +19,7 @@ export class AcccountService {
   }
 
   getById(id: number): Observable<Account>{
-    // return this.httpClient.get<Product>(this.url + '/' + id);
-    return null;
+    return this.httpClient.get<Account>(this.url + '/profile/' + id);
   }
 
   delete(id: number): Observable<Account>{
@@ -36,10 +35,6 @@ export class AcccountService {
 
   edit(product: Account): Observable<Account>{
     // return this.httpClient.put<Product>(this.url + product.id + '/update', product);
-    return null;
-  }
-
-  getHistoryOrder(): Observable<Account[]>{
     return null;
   }
 }

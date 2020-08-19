@@ -6,7 +6,7 @@ import {ProductDeleteComponent} from './product-delete/product-delete.component'
 import {ProductEditComponent} from './product-edit/product-edit.component';
 
 @NgModule({
-  declarations: [ProductCreateComponent, ProductDetailComponent, ProductDeleteComponent, ProductEditComponent, TestComponent],
+  declarations: [ProductCreateComponent, ProductDetailComponent, ProductDeleteComponent, ProductEditComponent],
   imports: [
     CommonModule
   ]
