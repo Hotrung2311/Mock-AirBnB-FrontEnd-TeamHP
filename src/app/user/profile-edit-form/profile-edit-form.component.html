@@ -146,9 +146,10 @@
 
   <!--Booking form-->
   <div class="container">
-    <p>{{abc}}</p>
     <form class="text-center border border-light p-5" [formGroup]="editForm" (ngSubmit)="edit()" method="post">
       <p class="h4 mb-4">User Profile</p>
+
+      <input type="hidden" formControlName="id">
 
       <p style="float: left;">User Name</p>
       <input type="text" class="form-control mb-4" placeholder="Name" formControlName="username">

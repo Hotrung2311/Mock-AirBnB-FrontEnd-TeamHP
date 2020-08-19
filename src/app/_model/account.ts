@@ -8,4 +8,5 @@ export interface Account {
   accountAddress?: string;
   email?: string;
   role?: Role[];
+  token?: string;
 }

@@ -146,25 +146,18 @@
 
   <!--Booking form-->
   <div class="container">
-    <form class="text-center border border-light p-5" action="#!">
+    <form class="text-center border border-light p-5" action="#!" [formGroup]="bookingForm" (ngSubmit)="booking()">
 
       <p class="h4 mb-4">Reservations</p>
 
       <p>Customer informations</p>
-      <!-- Name -->
-      <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
-
-      <!-- Email -->
-      <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
-
-      <input value="user id" hidden>
 
       <!-- Subject -->
       <p>Details</p>
-      <input class="form-control mb-4" value="House name" readonly>
-      <input class="form-control mb-4" value="House id" hidden>
-      <input type="text" placeholder="Date of arrival" class="form-control mb-4" bsDatepicker>
-      <input type="text" placeholder="Date of departure" class="form-control mb-4" bsDatepicker>
+      <input class="form-control mb-4" formControlName="account" hidden>
+      <input class="form-control mb-4" formControlName="house" hidden>
+      <input type="text" placeholder="Date of arrival" class="form-control mb-4" bsDatepicker formControlName="startTime">
+      <input type="text" placeholder="Date of departure" class="form-control mb-4" bsDatepicker formControlName="endTime">
 
 
 

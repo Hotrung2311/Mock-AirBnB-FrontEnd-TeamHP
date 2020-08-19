@@ -35,9 +35,8 @@ export class AccountService {
     return null;
   }
 
-  edit(product: Account): Observable<Account>{
-    // return this.httpClient.put<Product>(this.url + product.id + '/update', product);
-    return null;
+  edit(account: Account): Observable<Account>{
+    return this.httpClient.put<Account>(this.url + '/profile/edit', account);
   }
 
   login(account: any): Observable<Account>{

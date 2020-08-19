@@ -11,9 +11,9 @@ import { ProfileEditFormComponent } from './profile-edit-form/profile-edit-form.
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 const routes: Routes = [
-  {path: 'history/:id', component: BookingHistoryComponent},
+  {path: 'history', component: BookingHistoryComponent},
   {path: 'search', component: SearchProductComponent},
-  {path: 'booking' , component: BookingFormComponent},
+  {path: 'booking/:id' , component: BookingFormComponent},
   {path: 'profile/edit' , component: ProfileEditFormComponent},
   {path: ':id', component: DetailProductComponent},
 ]

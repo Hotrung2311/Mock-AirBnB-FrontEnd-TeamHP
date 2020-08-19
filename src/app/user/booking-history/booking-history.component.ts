@@ -5,6 +5,8 @@ import {Booking} from "@app/_model/booking";
 import {House} from "@app/_model/house";
 import {HouseService} from "@app/_services/house.service";
 import {ActivatedRoute} from "@angular/router";
+import {AccountService} from "../../_services/account.service";
+import {TokenStorageService} from "../../jwt/tokenStorage.service";
 
 @Component({
   selector: 'app-booking-history',
@@ -18,11 +20,12 @@ export class BookingHistoryComponent implements OnInit {
 
   constructor(
     private bookingService: BookingService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private tokenStorageService: TokenStorageService
   ) { }
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.params['id'];
+    this.id = Number(this.tokenStorageService.getUser())
     this.bookingService.getHistoryBooking(this.id).subscribe(data=>{ return this.historyBooking = data});
     console.log(this.historyBooking)
   }
