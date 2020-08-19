@@ -6,6 +6,9 @@ import {House} from "@app/_model/house";
 import {Vote} from '../../_model/vote';
 import {TokenStorageService} from '../../jwt/tokenStorage.service';
 import {datepickerAnimation} from 'ngx-bootstrap/datepicker/datepicker-animations';
+import {AngularEditorConfig} from '@kolkov/angular-editor';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {Comments} from '../../_model/comment';
 
 @Component({
   selector: 'app-detail-product',
@@ -17,9 +20,39 @@ export class DetailProductComponent implements OnInit {
   id: number;
   house: House;
   rates: number;
+  config: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '10rem',
+    minHeight: '5rem',
+    placeholder: 'Enter text here...',
+    translate: 'no',
+    defaultParagraphSeparator: 'p',
+    defaultFontName: 'Arial',
+    toolbarHiddenButtons: [
+      ['bold']
+    ],
+    customClasses: [
+      {
+        name: "quote",
+        class: "quote",
+      },
+      {
+        name: 'redText',
+        class: 'redText'
+      },
+      {
+        name: "titleText",
+        class: "titleText",
+        tag: "h1",
+      },
+    ]
+  };
+  commentForm: FormGroup;
 
   constructor(
     private houseService: HouseService,
+    private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private tokenStorageService: TokenStorageService
   ) { }
@@ -28,6 +61,9 @@ export class DetailProductComponent implements OnInit {
     this.id = +this.route.snapshot.params['id'];
     this.houseService.getById(this.id).subscribe(data=>{ return this.house = data});
     console.log(this.house)
+    this.commentForm = this.formBuilder.group({
+      contentComment: [''],
+    })
   }
 
   rate() {
@@ -50,5 +86,21 @@ export class DetailProductComponent implements OnInit {
         })
     }
 
+  }
+
+  submit() {
+    const comment: Comments ={
+      account:{
+        id:this.tokenStorageService.getUser()
+      },
+      contentComment:this.commentForm.value.contentComment,
+      house: {
+        id: this.id
+      }
+    }
+      this.houseService.comment(comment).subscribe(data=>{
+        window.location.reload();
+        console.log(comment);
+      })
   }
 }

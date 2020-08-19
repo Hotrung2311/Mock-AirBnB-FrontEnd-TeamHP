@@ -1,5 +1,6 @@
 import {City} from "@app/_model/city";
 import {Image} from "@app/_model/image";
+import {Account} from './account';
 
 export interface House {
   id: number;
@@ -14,4 +15,5 @@ export interface House {
   roomType: string;
   houseType: string;
   images?: Image[];
+  comments?: any;
 }

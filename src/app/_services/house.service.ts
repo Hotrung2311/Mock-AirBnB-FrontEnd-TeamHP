@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {Product} from "../_model/product";
 import {House} from "../_model/house";
 import {Vote} from '../_model/vote';
+import {Comments} from '../_model/comment';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +37,9 @@ export class HouseService {
   vote(votes: Vote): Observable<Vote> {
     return this.httpClient.post(this.url+'vote' ,votes)
 
+  }
+
+  comment(comment: Comments):Observable<Comments> {
+    return this.httpClient.post(this.url+'comment',comment)
   }
 }
