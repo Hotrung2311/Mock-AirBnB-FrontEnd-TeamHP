@@ -1,7 +1,7 @@
-import {House} from "./house";
-
-export interface Housetype {
-  id?: number,
-  name?: string,
-  houses?: House[]
-}
+// import {House} from "./house";
+//
+// export interface Housetype {
+//   id?: number,
+//   name?: string,
+//   houses?: House[]
+// }

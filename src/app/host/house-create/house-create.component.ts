@@ -6,12 +6,12 @@ import {AngularFirestore} from "@angular/fire/firestore";
 import {AngularFireStorage} from "@angular/fire/storage";
 import {House} from "@app/_model/house";
 import {ImageHouse} from "@app/_model/imageHouse";
-import {Roomtype} from "@app/_model/roomtype";
-import {Housetype} from "@app/_model/housetype";
-import {City} from "@app/_model/city";
+// import {Roomtype} from "@app/_model/roomtype";
+// import {Housetype} from "@app/_model/housetype";
+// import {City} from "@app/_model/city";
 import Swal from 'sweetalert2';
 import {Res} from "@app/_model/res";
-import {AllListService} from "@app/_services/all-list.service";
+// import {AllListService} from "@app/_services/all-list.service";
 import {IDropdownSettings} from "ng-multiselect-dropdown";
 import {Account} from "@app/_model/account";
 // import {Address} from "@app/_model/address";
@@ -64,9 +64,9 @@ export class HouseCreateComponent implements OnInit {
     id: 1,
   };
   // account: Account;
-  houseTypes: Housetype[] = [];
-  roomTypes: Roomtype[] = [];
-  cities: City[] = [];
+  // houseTypes: Housetype[] = [];
+  // roomTypes: Roomtype[] = [];
+  // cities: City[] = [];
   files: File[] = [];
   images: ImageHouse[] = [];
 
@@ -75,36 +75,36 @@ export class HouseCreateComponent implements OnInit {
               private formBuilder: FormBuilder,
               private storage: AngularFireStorage,
               private db: AngularFirestore,
-              private allListService: AllListService,
+              // private allListService: AllListService,
               ) { }
 
   ngOnInit() {
-    const arrayResult = this.getList();
-    arrayResult.then((resList) => {
-      this.houseTypes = resList[0].data;
-      this.roomTypes = resList[1].data;
-      this.cities = resList[2].data;
-    });
+    // const arrayResult = this.getList();
+    // arrayResult.then((resList) => {
+    //   this.houseTypes = resList[0].data;
+    //   this.roomTypes = resList[1].data;
+    //   this.cities = resList[2].data;
+    // });
 
     this.HouseForm = this.formBuilder.group({
       nameHouse: ['', Validators.required],
       address: ['', Validators.required],
       bathroom: ['', Validators.required],
       bedroom: ['', Validators.required],
-      houseTypes: this.formBuilder.control([]),
-      roomTypes: this.formBuilder.control([]),
-      cities: this.formBuilder.control([]),
+      houseTypes: ['', Validators.required],
+      roomTypes: ['', Validators.required],
+      city: ['', Validators.required],
       priceHouse: ['', Validators.required],
     });
   }
 
-  async getList() {
-    return Promise.all([
-      this.allListService.getHouseTypeList().toPromise(),
-      this.allListService.getRoomTypeList().toPromise(),
-      this.allListService.getCityList().toPromise(),
-    ]);
-  }
+  // async getList() {
+  //   return Promise.all([
+  //     this.allListService.getHouseTypeList().toPromise(),
+  //     this.allListService.getRoomTypeList().toPromise(),
+  //     this.allListService.getCityList().toPromise(),
+  //   ]);
+  // }
 
   async onSubmit() {
     if (this.HouseForm.invalid) {
@@ -138,6 +138,9 @@ export class HouseCreateComponent implements OnInit {
         console.log(this.images);
       })
       .then(() => {
+        this.house.account = {
+          id: 1
+        }
         this.house.imageHouses = this.images;
         console.log(this.house);
         this.houseService
