@@ -35,13 +35,15 @@ export class HouseService {
     return this.httpClient.put(`http://localhost:8080/house/update-apartment-pictures/${id}`, imageHouses);
   }
 
+  addHouse(house: House){
+    return this.httpClient.post(this.url + '/create', house);
+  }
+
   deleteHouse(id: number): Observable<House>{
     return this.httpClient.delete<House>(this.url + '/' + id + '/delete');
   }
 
-  addHouse(house: House){
-    return this.httpClient.post(this.url + '/create', house);
-  }
+
 
   editHouse(house: House): Observable<Account>{
     return this.httpClient.put<Account>(this.url + house.id + '/update', house);

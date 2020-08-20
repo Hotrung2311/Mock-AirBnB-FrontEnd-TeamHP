@@ -14,6 +14,7 @@ import { HouseDetailsComponent } from './house-details/house-details.component';
 const routes: Routes = [
   {path: "create", component: HouseCreateComponent},
   {path: "list", component: HouseListComponent},
+  {path: ":id/detail", component: HouseDetailsComponent},
   {path: ":id/edit", component: HouseEditComponent},
   // {path: "book", loadChildren: './house-status/house-status.module#HouseStatusModule'},
   {path: "book", loadChildren: () => import('./house-status/house-status.module').then(m => m.HouseStatusModule)},
