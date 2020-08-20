@@ -144,35 +144,21 @@
     </div>
   </div>
 
-  <!--Booking form-->
-  <div class="container">
-    <form class="text-center border border-light p-5" [formGroup]="editForm" (ngSubmit)="edit()" method="post">
-      <p class="h4 mb-4">User Profile</p>
+  <!--History booking list-->
+  <div class="properties">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="section_title">Bạn có chắc chắc muốn hủy lịch đặt thuê?</div>
+          <div class="section_subtitle">Bạn không thể hủy lịch đặt thuê trước không quá 1 ngày</div>
+          <button class="btn btn-danger" (click)="deleteBooking()">Cancel</button>
+          <button class="btn btn-outline-secondary" style="margin-left: 10px" routerLink="/user/history">Back</button>
+        </div>
+      </div>
 
-      <input type="hidden" formControlName="id">
-
-      <p style="float: left;">User Name</p>
-      <input type="text" class="form-control mb-4" placeholder="Name" formControlName="username">
-
-      <p style="float: left;">Password</p>
-      <input type="password" class="form-control mb-4" placeholder="Password" formControlName="password">
-
-      <p style="float: left;">Phone</p>
-      <input type="text" class="form-control mb-4" placeholder="Phone number" formControlName="phoneNumber">
-
-      <p style="float: left;">Address</p>
-      <input type="text" class="form-control mb-4" placeholder="Address" formControlName="accountAddress">
-
-      <p style="float: left;">Email</p>
-      <input type="email" class="form-control mb-4" placeholder="E-mail" formControlName="email">
-
-      <!-- Send button -->
-      <button class="btn btn-info btn-block" type="submit">Save</button>
-
-    </form>
-    <!-- Default form contact -->
+    </div>
   </div>
-  <!--Booking form-->
+  <!--History booking list-->
 
   <!-- Footer -->
 

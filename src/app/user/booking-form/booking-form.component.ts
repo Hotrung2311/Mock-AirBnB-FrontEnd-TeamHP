@@ -38,7 +38,7 @@ export class BookingFormComponent implements OnInit {
   booking() {
     if (this.bookingForm.valid) {
       let startTime = new Date(this.bookingForm.value.startTime).getTime();
-      let endTime = new Date(this.bookingForm.value.endTime).getTime();
+      let endTime = new Date(this.bookingForm.value.stopTime).getTime();
       const booking: Booking = {
         house: {
           id: this.bookingForm.value.house
@@ -46,7 +46,7 @@ export class BookingFormComponent implements OnInit {
         account:{
           id: this.tokenStorageService.getUser()
         },
-        endTime: endTime,
+        stopTime: endTime,
         startTime: startTime
       };
 

@@ -21,7 +21,7 @@ export class BookingService {
   }
 
   delete(id: number): Observable<Booking>{
-    return this.httpClient.delete<Booking>(this.url + '/' + id + '/delete');
+    return this.httpClient.delete<Booking>(this.url + '/delete/' + id);
   }
 
   add(booking: Booking): Observable<Booking>{
