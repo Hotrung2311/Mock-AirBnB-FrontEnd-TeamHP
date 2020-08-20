@@ -63,7 +63,7 @@
 
   <div class="home">
     <div class="parallax_background parallax-window" data-parallax="scroll"
-         data-image-src="assets/trung-new/images/elements.jpg" data-speed="0.8"></div>
+         data-image-src="../../assets/trung-new/images/elements.jpg" data-speed="0.8"></div>
     <div class="home_container">
       <div class="container">
         <div class="row">
@@ -163,11 +163,23 @@
               <div class="tag_featured property_tag"><a href="#">Featured</a></div>
             </div>
             <div class="property_body text-center">
-              <div class="property_location">{{booking.house.city.name}}</div>
-              <div class="property_title"><a href="property.html">{{booking.house.nameHouse}}</a></div>
+              <div class="property_location">
+                <span>Date of Arrival: </span>
+                <span>{{booking.startTime}}</span>
+              </div>
+              <br>
+              <div class="property_location">
+                <span>Date of Departure: </span>
+                <span>{{booking.stopTime}}</span>
+              </div>
+              <div class="property_title"><a [routerLink]="['/home/detail', booking.house.id]">{{booking.house.nameHouse}}</a></div>
               <div class="property_price">
                 <span>$</span>
                 <span>{{booking.house.priceHouse}}</span>
+              </div>
+              <br>
+              <div>
+                <button class="btn btn-outline-danger" [routerLink]="['/user/delete-booking', booking.id]"> Cancel</button>
               </div>
             </div>
             <div class="property_footer d-flex flex-row align-items-center justify-content-start">

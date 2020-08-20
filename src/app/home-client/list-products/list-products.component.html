@@ -8,7 +8,7 @@
         <div class="col">
           <div class="header_content d-flex flex-row align-items-center justify-content-start">
             <div class="logo">
-              <a href="#"><img src="assets/trung-new/images/logo.png" alt=""></a>
+              <a href="#"><img src="../../assets/trung-new/images/logo.png" alt=""></a>
             </div>
             <nav class="main_nav">
               <ul>
@@ -21,7 +21,7 @@
             </nav>
             <div class="phone_num ml-auto">
               <div class="phone_num_inner">
-                <img src="assets/trung-new/images/phone.png" alt=""><span>652-345 3222 11</span>
+                <img src="../../assets/trung-new/images/phone.png" alt=""><span>652-345 3222 11</span>
               </div>
             </div>
             <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
@@ -42,7 +42,7 @@
         <a href="#">
           <div class="logo_container d-flex flex-row align-items-start justify-content-start">
             <div class="logo_image">
-              <div><img src="assets/trung-new/images/logo.png" alt=""></div>
+              <div><img src="../assets/trung-new/images/logo.png" alt=""></div>
             </div>
           </div>
         </a>
@@ -63,7 +63,7 @@
 
   <div class="home">
     <div class="parallax_background parallax-window" data-parallax="scroll"
-         data-image-src="assets/trung-new/images/properties.jpg" data-speed="0.8"></div>
+         data-image-src="../../assets/trung-new/images/properties.jpg" data-speed="0.8"></div>
     <div class="home_container">
       <div class="container">
         <div class="row">
@@ -162,8 +162,8 @@
               <div class="tag_featured property_tag"><a href="#">Featured</a></div>
             </div>
             <div class="property_body text-center">
-              <div class="property_location">{{house.city}}</div>
-              <div class="property_title"><a [routerLink]="['/home', house.id]">{{house.nameHouse}}</a></div>
+              <div class="property_location">{{house.city.nameCity}}</div>
+              <div class="property_title"><a [routerLink]="['/home/detail', house.id]">{{house.nameHouse}}</a></div>
               <div class="property_price">
                 <span>VND </span>
                 <span>{{house.priceHouse}}</span>

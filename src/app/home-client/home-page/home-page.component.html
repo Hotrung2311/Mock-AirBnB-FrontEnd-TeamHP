@@ -19,22 +19,31 @@
                 <li><a href="about.html">About us</a></li>
               </ul>
             </nav>
-            <div class="phone_num ml-auto">
-              <div class="phone_num_inner">
-                <button [routerLink]="['/login']"> đăng nhập</button>
+            <!--            <div class="phone_num ml-auto">-->
+            <!--              <div class="phone_num_inner">-->
+            <!--                <a [routerLink]="['/login']">-->
+            <!--                  -->
+            <!--                </a>-->
 
-<!--                <div class="dropdown">-->
-<!--                  <a class="nav-link dropdown-toggle" href="#" id="navbar" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--                    Dropdown-->
-<!--                  </a>-->
-<!--                  <div class="dropdown-menu" aria-labelledby="navbar">-->
-<!--                    <a class="dropdown-item" href="#">Action</a>-->
-<!--                    <a class="dropdown-item" href="#">Another action</a>-->
-<!--                    <div class="dropdown-divider"></div>-->
-<!--                    <a class="dropdown-item" href="#">Something else here</a>-->
-<!--                  </div>-->
-<!--                </div>-->
+            <div class="col">
+              <div ngbDropdown class="d-inline-block">
+                <div class="phone_num ml-auto">
+                  <div class="phone_num_inner">
+                    <a id="dropdownBasic1" ngbDropdownToggle>
+                      <img src="../../../assets/trung-new/images/user-16.png" height="20" width="20"/>
+                    </a>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <button ngbDropdownItem routerLink="/login/register">Sign up</button>
+                      <button ngbDropdownItem routerLink="/login">Log in</button>
+                      <div class="dropdown-divider"></div>
+                      <button ngbDropdownItem>Host your home</button>
+                      <button ngbDropdownItem routerLink="/user/history">Your bookings</button>
+                      <button ngbDropdownItem routerLink="/login/profile">Your Profile</button>
+                    </div>
+                  </div>
+                </div>
               </div>
+
             </div>
 
             <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
@@ -194,8 +203,8 @@
             <div class="owl-carousel owl-theme recent_slider">
 
               <!-- Slide -->
-              <div *ngFor="let house of houseList">
-                <div class="recent_item">
+<!--              <div *ngFor="let house of houseList">-->
+                <div class="recent_item" *ngFor="let house of houseList">
                   <div class="recent_item_inner">
                     <div class="recent_item_image">
                       <img src="assets/trung-new/images/property_1.jpg" alt="">
@@ -203,7 +212,8 @@
                     </div>
                     <div class="recent_item_body text-center">
                       <div class="recent_item_location">{{house.city.name}}</div>
-                      <div class="recent_item_title"><a [routerLink]="['/home/detail',house.id]">{{house.nameHouse}}</a></div>
+                      <div class="recent_item_title"><a [routerLink]="['/home/detail',house.id]">{{house.nameHouse}}</a>
+                      </div>
                       <div class="recent_item_price">{{house.priceHouse}}</div>
                     </div>
                     <div class="recent_item_footer d-flex flex-row align-items-center justify-content-start">
@@ -222,7 +232,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+<!--                </div>-->
               </div>
 
             </div>
@@ -516,6 +526,12 @@
   </footer>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
