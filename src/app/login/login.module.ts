@@ -10,6 +10,7 @@ import {BookingFormComponent} from "../user/booking-form/booking-form.component"
 import {ProfileEditFormComponent} from "../user/profile-edit-form/profile-edit-form.component";
 import {DetailProductComponent} from "../home-client/detail-product/detail-product.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NgbDropdownModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -19,11 +20,13 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [RegisterComponent, LoginComponent, ProfileComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    ReactiveFormsModule,
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        ReactiveFormsModule,
+        FormsModule,
+        NgbDropdownModule,
+        NgbModule
+    ]
 })
 export class LoginModule { }

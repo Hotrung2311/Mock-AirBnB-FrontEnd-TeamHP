@@ -12,17 +12,33 @@
             </div>
             <nav class="main_nav">
               <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="properties.html">Properties</a></li>
+                <li class="active"><a [routerLink]="['/home']">Home</a></li>
+                <li><a [routerLink]="['/home/list']">Properties</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About us</a></li>
               </ul>
             </nav>
-            <div class="phone_num ml-auto">
-              <div class="phone_num_inner">
-                <img src="assets/trung-new/images/phone.png" alt=""><span>652-345 3222 11</span>
+
+            <div class="col">
+              <div ngbDropdown class="d-inline-block">
+                <div class="phone_num ml-auto">
+                  <div class="phone_num_inner">
+                    <a id="dropdownBasic1" ngbDropdownToggle>
+                      <img src="../../../assets/trung-new/images/user-16.png" height="20" width="20"/>
+                    </a>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <button ngbDropdownItem routerLink="/login/register">Sign up</button>
+                      <button ngbDropdownItem routerLink="/login">Log in</button>
+                      <div class="dropdown-divider"></div>
+                      <button ngbDropdownItem>Host your home</button>
+                      <button ngbDropdownItem routerLink="/user/history">Your bookings</button>
+                      <button ngbDropdownItem routerLink="/login/profile">Your Profile</button>
+                    </div>
+                  </div>
+                </div>
               </div>
+
             </div>
             <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
           </div>
@@ -42,18 +58,17 @@
         <a href="#">
           <div class="logo_container d-flex flex-row align-items-start justify-content-start">
             <div class="logo_image">
-              <div><img src="assets/trung-new/images/logo.png" alt=""></div>
+              <div><img src="../assets/trung-new/images/logo.png" alt=""></div>
             </div>
           </div>
         </a>
       </div>
       <ul>
-        <li class="menu_item"><a href="index.html">Home</a></li>
-        <li class="menu_item"><a href="about.html">About us</a></li>
-        <li class="menu_item"><a href="#">Speakers</a></li>
-        <li class="menu_item"><a href="#">Tickets</a></li>
-        <li class="menu_item"><a href="news.html">News</a></li>
-        <li class="menu_item"><a href="contact.html">Contact</a></li>
+        <li class="menu_item"><a routerLink="/home">Home</a></li>
+        <li class="menu_item"><a routerLink="/home/list">Properties</a></li>
+        <li class="menu_item"><a routerLink="/home">News</a></li>
+        <li class="menu_item"><a routerLink="/home">Contact</a></li>
+        <li class="menu_item"><a routerLink="/home">About us</a></li>
       </ul>
     </div>
     <div class="menu_phone"><span>call us: </span>652 345 3222 11</div>

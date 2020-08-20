@@ -12,6 +12,7 @@ import {TokenStorageService} from "../../jwt/tokenStorage.service";
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  isLogin: boolean;
 
   constructor(private acountService: AccountService,
               private fb: FormBuilder,
@@ -34,7 +35,8 @@ export class LoginComponent implements OnInit {
       this.acountService.login(account).subscribe(
         data => {
           this.tokenStorage.saveToken(data.token);
-          this.tokenStorage.saveUser(String(data.id))
+          this.tokenStorage.saveUser(String(data.id));
+          this.tokenStorage.userName(data.username)
           this.loginForm.reset;
           this.router.navigate(['/home']);
         },

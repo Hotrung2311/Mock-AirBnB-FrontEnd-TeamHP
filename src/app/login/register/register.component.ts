@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
           this.router.navigate(['/home']);
         },
         err => {
-          alert(err);
+          alert(err.message);
         }
       );
     }

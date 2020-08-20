@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {HouseService} from "@app/_services/house.service";
 import {House} from "@app/_model/house";
+import {TokenStorageService} from '@app/jwt/tokenStorage.service';
+import {AccountService} from '@app/_services/account.service';
+import {Observable} from 'rxjs';
 
 declare var $: any;
 
@@ -11,12 +14,19 @@ declare var $: any;
 })
 export class HomePageComponent implements OnInit {
 
+  isLogin: boolean = false;
+  currentUser: Account;
+  currentName: string;
+
   constructor(
-    private houseService: HouseService
+    private houseService: HouseService,
+    private tokenStorageService: TokenStorageService,
+    private accountService: AccountService
   ) {
   }
 
   ngOnInit(): void {
+    // this.currentName = this.tokenStorageService.getUserName();
     $(document).ready(function () {
       $('.owl-carousel').owlCarousel({
         loop: true,

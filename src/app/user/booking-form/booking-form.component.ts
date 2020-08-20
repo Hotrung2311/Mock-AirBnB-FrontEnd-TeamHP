@@ -38,7 +38,7 @@ export class BookingFormComponent implements OnInit {
   booking() {
     if (this.bookingForm.valid) {
       let startTime = new Date(this.bookingForm.value.startTime).getTime();
-      let endTime = new Date(this.bookingForm.value.stopTime).getTime();
+      let endTime = new Date(this.bookingForm.value.endTime).getTime();
       const booking: Booking = {
         house: {
           id: this.bookingForm.value.house
@@ -46,7 +46,7 @@ export class BookingFormComponent implements OnInit {
         account:{
           id: this.tokenStorageService.getUser()
         },
-        stopTime: endTime,
+        endTime: endTime,
         startTime: startTime
       };
 
@@ -54,10 +54,11 @@ export class BookingFormComponent implements OnInit {
       this.bookingService.add(booking).subscribe(
         data => {
           this.bookingForm.reset;
-          this.router.navigate(['/home']);
+          this.router.navigate(['/user/history']);
+          alert('successful booking');
         },
         err => {
-          alert(err);
+          alert('Booking failed, time is invalid or house is unavailable !');
         }
       );
     }

@@ -31,8 +31,7 @@ export class AccountService {
 
 
   add(account: Account): Observable<Account>{
-    // return this.httpClient.post<Product>(this.url + '/create', account);
-    return null;
+    return this.httpClient.post<Account>(this.url + '/create', account);
   }
 
   edit(account: Account): Observable<Account>{

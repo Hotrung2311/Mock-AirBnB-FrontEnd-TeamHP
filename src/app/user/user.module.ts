@@ -10,6 +10,7 @@ import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
 import { ProfileEditFormComponent } from './profile-edit-form/profile-edit-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DeleteConfirmComponent } from './booking-history/delete-confirm/delete-confirm.component';
+import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {path: 'history', component: BookingHistoryComponent},
@@ -25,12 +26,13 @@ const routes: Routes = [
   exports: [
     // BookingFormComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    BsDatepickerModule,
-    ReactiveFormsModule,
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        BsDatepickerModule,
+        ReactiveFormsModule,
+        FormsModule,
+        NgbDropdownModule
+    ]
 })
 export class UserModule { }
