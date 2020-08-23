@@ -17,6 +17,12 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 import { JwPaginationModule } from 'jw-angular-pagination';
+import {HostModule} from '@app/host/host.module';
+import {environment} from '@environments/environment';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 
 
 @NgModule({
@@ -28,6 +34,12 @@ import { JwPaginationModule } from 'jw-angular-pagination';
     RouterModule,
     FormsModule,
     BrowserAnimationsModule,
+    HostModule,
+    BrowserAnimationsModule,
+    NgMultiSelectDropDownModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule, // firestore
+    AngularFireStorageModule, // storage
     BsDatepickerModule.forRoot(),
     JwPaginationModule,
   ],

@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from "@app/_model/product";
 import {ActivatedRoute} from "@angular/router";
 import { HouseService } from '@app/_services/house.service';
 import {House} from "@app/_model/house";
 import {Vote} from '../../_model/vote';
 import {TokenStorageService} from '../../jwt/tokenStorage.service';
-import {datepickerAnimation} from 'ngx-bootstrap/datepicker/datepicker-animations';
-import {AngularEditorConfig} from '@kolkov/angular-editor';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Comments} from '../../_model/comment';
+import {AngularEditorConfig} from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-detail-product',
