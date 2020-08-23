@@ -8,6 +8,7 @@ const routes: Routes = [
   {path:'home', loadChildren: () => import('./home-client/home-client.module').then(value => value.HomeClientModule)},
   {path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule)},
   {path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule)},
+  {path: 'host', loadChildren: () => import('./host/host.module').then(m => m.HostModule)},
 ]
 
 @NgModule({

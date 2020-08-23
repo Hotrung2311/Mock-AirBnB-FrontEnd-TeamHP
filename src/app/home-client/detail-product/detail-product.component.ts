@@ -16,7 +16,7 @@ import {AngularEditorConfig} from '@kolkov/angular-editor';
 export class DetailProductComponent implements OnInit {
 
   id: number;
-  house: House;
+  house: House={};
   rates: number;
   config: AngularEditorConfig = {
     editable: true,
@@ -57,8 +57,23 @@ export class DetailProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = +this.route.snapshot.params['id'];
-    this.houseService.getById(this.id).subscribe(data=>{ return this.house = data});
-    console.log(this.house)
+    this.houseService.getById(this.id).subscribe(data=>{
+      this.house = {
+        id:data.id,
+        address:data.address,
+        account:data.account,
+        imageHouses:data.imageHouses,
+        bathroom:data.bathroom,
+        nameHouse:data.nameHouse,
+        bedroom:data.bedroom,
+        voteNumber:data.voteNumber,
+        city:data.city,
+        comments:data.comments,
+        priceHouse:data.priceHouse
+      };
+      console.log(this.house);
+    });
+
     this.commentForm = this.formBuilder.group({
       contentComment: [''],
     })

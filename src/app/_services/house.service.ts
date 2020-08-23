@@ -42,4 +42,5 @@ export class HouseService {
   comment(comment: Comments):Observable<Comments> {
     return this.httpClient.post(this.url+'comment',comment)
   }
+
 }

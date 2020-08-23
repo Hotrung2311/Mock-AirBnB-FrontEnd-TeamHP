@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 import {Res} from "@app/_model/res";
 import {IDropdownSettings} from "ng-multiselect-dropdown";
 import {Account} from "@app/_model/account";
+import {ActivatedRoute, Router} from '@angular/router';
 
 const Toast = Swal.mixin({
   toast: true,
@@ -62,17 +63,11 @@ export class HouseCreateComponent implements OnInit {
               private formBuilder: FormBuilder,
               private storage: AngularFireStorage,
               private db: AngularFirestore,
-              // private allListService: AllListService,
+              private route: ActivatedRoute,
+              private router: Router,
   ) { }
 
   ngOnInit() {
-    // const arrayResult = this.getList();
-    // arrayResult.then((resList) => {
-    //   this.houseTypes = resList[0].data;
-    //   this.roomTypes = resList[1].data;
-    //   this.cities = resList[2].data;
-    // });
-
     this.HouseForm = this.formBuilder.group({
       nameHouse: ['', Validators.required],
       address: ['', Validators.required],
@@ -84,14 +79,6 @@ export class HouseCreateComponent implements OnInit {
       priceHouse: ['', Validators.required],
     });
   }
-
-  // async getList() {
-  //   return Promise.all([
-  //     this.allListService.getHouseTypeList().toPromise(),
-  //     this.allListService.getRoomTypeList().toPromise(),
-  //     this.allListService.getCityList().toPromise(),
-  //   ]);
-  // }
 
   async onSubmit() {
     if (this.HouseForm.invalid) {
@@ -131,19 +118,9 @@ export class HouseCreateComponent implements OnInit {
         this.house.imageHouses = this.images;
         console.log(this.house);
         this.houseService
-          .addHouse(this.house)
-          .subscribe((res: Res) => {
-            console.log(res);
-            if (res.status === 'SUCCESS')  Toast.fire({
-              icon: 'success',
-              title: 'Success',
-              html: 'Create new Apartment Success!!!!'
-            });
-            else  Toast.fire({
-              icon: 'error',
-              title: 'Fail',
-              html: 'Create new Apartment Fail!!!!'
-            });
+          .add(this.house)
+          .subscribe(data => {
+              this.router.navigate(['/home/list'])
           });
       })
       .catch((err) => alert(err))

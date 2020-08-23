@@ -196,7 +196,10 @@
 
       <!-- Intro Slider -->
       <!-- Slide -->
-      <div class="owl-item"><img src="assets/trung-new/images/intro_1.jpg" alt=""></div>
+      <div *ngFor="let image of house.imageHouses">
+        <div class="owl-item"><img [src]="image.imageUrl" alt=""></div>
+      </div>
+
 
       <!-- Intro Slider Nav -->
       <div class="intro_slider_nav_container">
@@ -393,7 +396,7 @@
                   </li>
                   <li>
                     <span>City: </span>
-                    <span>{{house.city.nameCity}}</span>
+                    <span>{{house.city}}</span>
                   </li>
                   <li>
                     <span>Type: </span>

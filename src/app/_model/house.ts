@@ -1,19 +1,19 @@
 import {City} from "@app/_model/city";
-import {Image} from "@app/_model/image";
+import {ImageHouse} from "@app/_model/imageHouse";
 import {Account} from './account';
 
 export interface House {
-  id: number;
-  address: string,
-  nameHouse: string;
-  bathroom: number;
-  bedroom: number;
-  priceHouse: number;
-  account: Account;
-  city: City;
+  id?: number;
+  address?: string,
+  nameHouse?: string;
+  bathroom?: number;
+  bedroom?: number;
+  priceHouse?: number;
+  account?: any;
+  city?: any;
   voteNumber?: number;
-  roomType: string;
-  houseType: string;
-  images?: Image[];
+  roomType?: string;
+  houseType?: string;
+  imageHouses?: any;
   comments?: any;
 }
